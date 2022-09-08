@@ -1,14 +1,25 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+/**
+ * @ Author: Captain
+ * @ Create Time: 2022-09-08 14:35:07
+ * @ Modified by: Captain
+ * @ Modified time: 2022-09-08 17:55:48
+ * @ Description:
+ *
+ * @format
+ */
 
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
-import './assets/main.css'
+import App from './App.vue';
+import router from './router';
 
-const app = createApp(App)
+import './assets/main.css';
 
-app.use(createPinia())
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(createPinia());
+app.use(router);
+console.log(app.config);
+
+app.mount('#app');
