@@ -1,0 +1,63 @@
+// {
+//   "files": [],
+//   "references": [
+//     {
+//       "path": "./tsconfig.config.json"
+//     },
+//     {
+//       "path": "./tsconfig.app.json"
+//     },
+//     {
+//       "path": "./tsconfig.vitest.json"
+//     }
+//   ]
+// }
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"module": "esnext",
+		"target": "esnext",
+		"lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+		"sourceMap": true,
+		// 严格的检查空值
+		"strictNullChecks": true,
+		"removeComments": false,
+		// 指定编译后文件所在目录
+		// "outDir": "./dist",
+		// 将全局作用域代码合并为一个文件
+		//    "outFile": "./dist/app.js",
+		// 是否对js文件进行编译，默认是false 不编译
+		"jsx": "preserve",
+		"importHelpers": true,
+		"moduleResolution": "node",
+		"allowJs": false,
+		// 是否检测js代码是否符合规范
+		"checkJs": false,
+		// 不生成编译后的文件
+		"noEmit": false,
+		// 当有错误时不生成编译后的文件
+		"noEmitOnError": false,
+		// 所有严格检查的总开关
+		"strict": true,
+		// 设置编译后的文件是否使用严格模式
+		"alwaysStrict": false,
+		// 是否允许隐式的any类型
+		"noImplicitAny": false,
+		"noUnusedLocals": false,
+		/* Report errors on unused locals. */
+		"noUnusedParameters": false,
+		/* Report errors on unused parameters. */
+		"noImplicitReturns": false,
+		/* Report error when not all code paths in function return a value. */
+		"experimentalDecorators": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "."
+		// 指定编译后文件所在目录
+		// "outDir": "./dist",
+		// 是否对js文件进行编译，默认是false 不编译
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+	"exclude": ["node_modules", "dist"]
+}
