@@ -12,5 +12,6 @@
 	"tslintIntegration": true,
 	"eslintIntegration": true,
 	"formatOnSave": true,
+	"endOfLine": "auto",
 	"formatOnPaste": true
 }

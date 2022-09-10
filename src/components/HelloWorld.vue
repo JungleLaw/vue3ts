@@ -4,7 +4,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-08 17:57:34
+ * @ Modified time: 2022-09-09 16:44:15
  * @ Description:
  -->
 
@@ -16,6 +16,7 @@ defineProps<{
 
 <template>
 	<div class="greetings">
+		<div>12223</div>
 		<h1 class="green">{{ msg }}</h1>
 		<h3>
 			You’ve successfully created a project with

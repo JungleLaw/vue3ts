@@ -3,8 +3,6 @@
 	"extends": ["tslint:recommended"],
 	"jsRules": {},
 	"rules": {
-		"member-access": true,
-		// 设置成员对象的访问权限（public,private,protect)
 		"member-ordering": [
 			// 设置修饰符顺序
 			true,
@@ -119,7 +117,7 @@
 		// 定义编码格式默认utf-8
 		"import-spacing": true,
 		// import关键字后加空格
-		"interface-name": [true, "always-prefix"],
+		"interface-name": [false, "always-prefix"],
 		// interface必须以I开头
 		"jsdoc-format": false,
 		// 注释基于jsdoc风格
@@ -128,11 +126,12 @@
 		"object-literal-sort-keys": false,
 		"no-consecutive-blank-lines": [true, 2],
 		// 不允许有空行
-		// "no-trailing-whitespace": [// 不允许空格结尾
-		//     true,
-		//     "ignore-comments",
-		//     "ignore-jsdoc"
-		// ],
+		"no-trailing-whitespace": [
+			// 不允许空格结尾
+			true,
+			"ignore-comments",
+			"ignore-jsdoc"
+		],
 		"no-unnecessary-initializer": true,
 		// 不允许没有必要的初始化
 		"variable-name": [

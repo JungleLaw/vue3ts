@@ -53,10 +53,14 @@
 		"skipLibCheck": true,
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
-		"baseUrl": "."
+		"noImplicitThis": true,
+		"baseUrl": ".",
 		// 指定编译后文件所在目录
 		// "outDir": "./dist",
 		// 是否对js文件进行编译，默认是false 不编译
+		"paths": {
+			"@/*": ["src/*"]
+		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
 	"exclude": ["node_modules", "dist"]

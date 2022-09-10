@@ -5,6 +5,9 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig, loadEnv, ConfigEnv, UserConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
@@ -19,7 +22,17 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 	// console.log('文件路径（dirname）------', __dirname + '/src');
 	// console.log('import.meta.url', import.meta.url);
 	return {
-		plugins: [vue(), vueJsx()],
+		plugins: [
+			vue(),
+			vueJsx(),
+			// ...
+			AutoImport({
+				resolvers: [ElementPlusResolver()],
+			}),
+			Components({
+				resolvers: [ElementPlusResolver()],
+			}),
+		],
 		resolve: {
 			alias: {
 				'@': fileURLToPath(new URL('./src', import.meta.url)),
