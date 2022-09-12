@@ -4,16 +4,18 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-09 15:47:29
  * @ Modified by: Captain
- * @ Modified time: 2022-09-09 15:50:38
+ * @ Modified time: 2022-09-11 06:39:55
  * @ Description:
  -->
 
 <template>
-	<div>D1</div>
-	<button @click="emit">log</button>
+	<div class="d1-root">
+		<div>D1</div>
+		<button @click="emit">log</button>
+	</div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
 	name: 'D1D',
 	emits: ['log'],
@@ -28,4 +30,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.d1-root {
+	width: 100px;
+	height: 100px;
+	background-color: aquamarine;
+}
+</style>

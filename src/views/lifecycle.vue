@@ -4,7 +4,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-09 15:28:13
  * @ Modified by: Captain
- * @ Modified time: 2022-09-09 15:44:00
+ * @ Modified time: 2022-09-12 00:53:39
  * @ Description:
  -->
 
@@ -49,7 +49,7 @@ export default defineComponent({
 		console.log('created', this.mydata);
 	},
 	mounted() {
-		console.log('mounted');
+		console.log('mounted', this.pa);
 	},
 	onBeforeMount() {
 		console.log('onBeforeMount');
@@ -82,43 +82,55 @@ export default defineComponent({
 		console.log('deactivated');
 	},
 	setup(props, context) {
-		console.log('setup', props, context);
+		console.log('setup props', props);
+		console.log('setup context', context);
+		console.log('setup this', this);
 		onMounted(() => {
-			console.log('Component is mounted!');
+			console.log('Component is mounted!', this);
 		});
 		onBeforeUpdate(() => {
-			console.log('onBeforeUpdate');
+			console.log('setup onBeforeUpdate');
 		});
 		onUpdated(() => {
-			console.log('onUpdated');
+			console.log('setup onUpdated');
 		});
 		onBeforeUnmount(() => {
-			console.log('onBeforeUnmount');
+			console.log('setup onBeforeUnmount');
 		});
 		onUnmounted(() => {
-			console.log('onUnmounted');
+			console.log('setup onUnmounted');
 		});
 		onErrorCaptured(() => {
-			console.log('onErrorCaptured');
+			console.log('setup onErrorCaptured');
 		});
 		onRenderTracked(() => {
-			console.log('onRenderTracked');
+			console.log('setup onRenderTracked');
 		});
 		onRenderTriggered(() => {
-			console.log('onRenderTriggered');
+			console.log('setup onRenderTriggered');
 		});
 		onActivated(() => {
-			console.log('onActivated');
+			console.log('setup onActivated');
 		});
 		onDeactivated(() => {
-			console.log('onDeactivated');
+			console.log('setup onDeactivated');
 		});
 		let repositories = [];
 		const getUserRepositories = async () => {
-			console.log('getUserRepositories');
+			console.log('setup getUserRepositories');
 		};
 		return {
 			repositories,
+			onMounted,
+			onBeforeUpdate,
+			onUpdated,
+			onBeforeUnmount,
+			onUnmounted,
+			onErrorCaptured,
+			onRenderTracked,
+			onRenderTriggered,
+			onActivated,
+			onDeactivated,
 			getUserRepositories,
 		};
 	},

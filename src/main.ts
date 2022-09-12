@@ -2,8 +2,10 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-09 11:12:17
- * @ Description:
+ * @ Modified time: 2022-09-12 21:11:33
+ * @ Modified by: Captain
+ * @ Modified time: 2022-09-13 00:53:32
+ *
  * @format
  */
 
@@ -14,7 +16,7 @@ import 'element-plus/dist/index.css';
 import App from './App.vue';
 import router from './router';
 
-import './assets/main.css';
+import './assets/base.css';
 
 const app = createApp(App);
 app.config.errorHandler = () => {
@@ -23,5 +25,5 @@ app.config.errorHandler = () => {
 app.use(createPinia());
 app.use(router);
 console.log(app.config);
-app.use(ElementPlus);
+app.use(ElementPlus, { zIndex: 9999 });
 app.mount('#app');
