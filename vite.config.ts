@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-13 16:46:28
+ * @ Modified time: 2022-09-14 01:17:09
  * @ Description:
  */
 
@@ -70,6 +70,12 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			port: 1234,
 			https: false,
 			open: false,
+			proxy: {
+				'/noauth': {
+					target: 'http://192.168.1.102:7001',
+					changeOrigin: true,
+				},
+			},
 		},
 		build: {
 			target: 'es2015',

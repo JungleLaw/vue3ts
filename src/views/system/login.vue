@@ -1,10 +1,8 @@
-<!-- @format -->
-
 <!--
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:00:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-13 18:14:40
+ * @ Modified time: 2022-09-14 01:19:39
  * @ Description:
  -->
 
@@ -36,6 +34,7 @@ import { defineComponent } from 'vue';
 import logo from '@/assets/logo.svg';
 import ComponentA from '@/components/ComponentA/index.vue';
 import ComponentB from '@/components/ComponentB/index.vue';
+import { captcha } from '@/api/login';
 
 export default defineComponent({
 	components: {
@@ -51,6 +50,10 @@ export default defineComponent({
 				captcha: '',
 			},
 		};
+	},
+	async mounted() {
+		const result: object = await captcha();
+		console.log('result', result);
 	},
 	methods: {
 		login(): void {
