@@ -107,7 +107,7 @@
 		// 格式
 		"align": [true, "parameters", "arguments", "statements", "members", "elements"],
 		// 定义对齐风格
-		"array-type": [true, "array"],
+		"array-type": [false, "array"],
 		// 建议使用T[]方式声明一个数组对象
 		"class-name": false,
 		// 类名以大驼峰格式命名

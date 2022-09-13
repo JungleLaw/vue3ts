@@ -1,17 +1,11 @@
-// {
-//   "files": [],
-//   "references": [
-//     {
-//       "path": "./tsconfig.config.json"
-//     },
-//     {
-//       "path": "./tsconfig.app.json"
-//     },
-//     {
-//       "path": "./tsconfig.vitest.json"
-//     }
-//   ]
-// }
+/**
+ * @ Author: Captain
+ * @ Create Time: 2022-09-08 14:35:07
+ * @ Modified by: Captain
+ * @ Modified time: 2022-09-13 18:11:51
+ * @ Description:
+ */
+
 {
 	"compileOnSave": true,
 	"compilerOptions": {
@@ -56,13 +50,29 @@
 		"noImplicitThis": true,
 		"baseUrl": ".",
 		"isolatedModules": true,
+		"newLine": "crlf",
+		"resolveJsonModule": true,
 		// 指定编译后文件所在目录
 		// "outDir": "./dist",
 		// 是否对js文件进行编译，默认是false 不编译
 		"paths": {
-			"@/*": ["src/*"]
-		}
+			"@/*": ["src/*"],
+			"#/*": ["types/*"]
+		},
+		"types": ["vite/client", "/types/*.d.ts"]
 	},
-	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+	"include": [
+		// "src/**/*",
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		"src/**/*.vue",
+		"tests/**/*.ts",
+		"tests/**/*.tsx",
+		"types/**/*.d.ts",
+		"types/**/*.ts",
+		"build/**/*.ts",
+		"build/**/*.d.ts",
+		"vite.config.ts"
+	],
 	"exclude": ["node_modules", "dist"]
 }

@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-12 22:49:56
+ * @ Modified time: 2022-09-13 16:42:04
  * @ Description:
  *
  * @format
@@ -68,7 +68,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 // 		component: () => import('../views/mouse.vue'),
 // 	},
 // ];
-const routes: Array<RouteRecordRaw> = [
+const basicRoutes: RouteRecordRaw[] = [
 	{
 		path: '/login',
 		name: 'Login',
@@ -76,9 +76,12 @@ const routes: Array<RouteRecordRaw> = [
 	},
 ];
 const router = createRouter({
-	// history: createWebHistory(import.meta.env.BASE_URL),
-	history: createWebHistory(),
-	routes: routes,
+	// 创建一个 hash 历史记录
+	history: createWebHistory(import.meta.env.VITE_PUBLIC_PATH),
+	// 是否应该禁止尾部斜杠。默认为假
+	strict: true,
+	// 应该添加到路由的初始路由列表。
+	routes: basicRoutes,
 });
 
 export default router;
