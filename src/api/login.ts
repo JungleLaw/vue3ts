@@ -11,7 +11,7 @@ export interface LoginForm {
 }
 
 export function login(params: LoginForm): Promise<object> {
-	return request({ url: Contants.LOGIN, method: 'POST', params });
+	return request({ url: Contants.LOGIN, method: 'POST', data: params });
 }
 export function captcha(): Promise<{ data: string }> {
 	return request({

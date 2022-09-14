@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-13 16:42:04
+ * @ Modified time: 2022-09-15 01:31:48
  * @ Description:
  *
  * @format
@@ -70,9 +70,29 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 // ];
 const basicRoutes: RouteRecordRaw[] = [
 	{
+		path: '',
+		name: 'default',
+		redirect: '/login',
+	},
+	{
+		path: '/',
+		name: 'slash',
+		redirect: '/login',
+	},
+	{
 		path: '/login',
 		name: 'Login',
-		component: () => import('../views/system/login.vue'),
+		component: () => import('../views/system/Login.vue'),
+	},
+	{
+		path: '/home',
+		name: 'Home',
+		component: () => import('../views/system/Home.vue'),
+	},
+	{
+		path: '/404',
+		name: 'NotFound',
+		component: () => import('../views/system/NotFound.vue'),
 	},
 ];
 const router = createRouter({

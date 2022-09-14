@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:00:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-14 10:32:20
+ * @ Modified time: 2022-09-15 00:51:17
  * @ Description:
  -->
 
@@ -22,7 +22,7 @@
 				<el-form-item label="验证码" props="captcha">
 					<el-input class="captcha-input" v-model="loginForm.captcha" type="text" autocomplete="off" />
 				</el-form-item>
-				<div class="captcha-img-parent">
+				<div class="captcha-img-parent" @click="requestCaptcha">
 					<img :src="captcha" alt="" class="captcha" />
 				</div>
 			</div>
@@ -64,6 +64,9 @@ export default defineComponent({
 			console.log('do login', this.loginForm);
 			const result = await login(this.loginForm);
 			console.log('login', result);
+			// this.$router.push({
+			// 	path: this.redirect || '/home',
+			// });
 		},
 		async requestCaptcha() {
 			const result: { data: string } = await captcha();
