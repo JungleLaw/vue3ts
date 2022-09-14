@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:00:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-14 01:19:39
+ * @ Modified time: 2022-09-14 10:32:20
  * @ Description:
  -->
 
@@ -18,10 +18,14 @@
 			<el-form-item label="密码" props="password">
 				<el-input v-model="loginForm.password" type="text" autocomplete="off" />
 			</el-form-item>
-			<el-form-item label="验证码" props="captcha">
-				<el-input v-model="loginForm.captcha" type="text" autocomplete="off" />
-				<img :src="logo" alt="" />
-			</el-form-item>
+			<div class="captcha-parent">
+				<el-form-item label="验证码" props="captcha">
+					<el-input class="captcha-input" v-model="loginForm.captcha" type="text" autocomplete="off" />
+				</el-form-item>
+				<div class="captcha-img-parent">
+					<img :src="captcha" alt="" class="captcha" />
+				</div>
+			</div>
 			<el-form-item>
 				<el-button type="primary" @click="login">Login</el-button>
 			</el-form-item>
@@ -34,7 +38,7 @@ import { defineComponent } from 'vue';
 import logo from '@/assets/logo.svg';
 import ComponentA from '@/components/ComponentA/index.vue';
 import ComponentB from '@/components/ComponentB/index.vue';
-import { captcha } from '@/api/login';
+import { captcha, login } from '@/api/login';
 
 export default defineComponent({
 	components: {
@@ -49,15 +53,21 @@ export default defineComponent({
 				password: '',
 				captcha: '',
 			},
+			captcha: '',
 		};
 	},
-	async mounted() {
-		const result: object = await captcha();
-		console.log('result', result);
+	mounted() {
+		this.requestCaptcha();
 	},
 	methods: {
-		login(): void {
+		async login() {
 			console.log('do login', this.loginForm);
+			const result = await login(this.loginForm);
+			console.log('login', result);
+		},
+		async requestCaptcha() {
+			const result: { data: string } = await captcha();
+			this.captcha = `data:image/svg+xml;base64,${window.btoa(result.data)}`;
 		},
 	},
 });
@@ -75,6 +85,24 @@ export default defineComponent({
 		font-size: 40px;
 		font-weight: 600;
 		padding: 30px 0;
+	}
+	.captcha-parent {
+		display: flex;
+		flex-flow: row nowrap;
+		.captcha-input {
+			width: 100px;
+		}
+		.captcha-img-parent {
+			width: 80px;
+			height: 50px;
+
+			.captcha {
+				margin: 10px;
+				background-color: white;
+				width: 100%;
+				height: 100%;
+			}
+		}
 	}
 }
 </style>

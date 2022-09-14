@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-14 01:17:09
+ * @ Modified time: 2022-09-14 09:00:46
  * @ Description:
  */
 
@@ -72,7 +72,8 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			open: false,
 			proxy: {
 				'/noauth': {
-					target: 'http://192.168.1.102:7001',
+					// target: 'http://192.168.1.102:7001',
+					target: 'http://10.10.18.60:7001',
 					changeOrigin: true,
 				},
 			},
