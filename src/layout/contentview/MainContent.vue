@@ -1,15 +1,13 @@
-<!-- @format -->
-
 <!--
  * @ Author: Captain
  * @ Create Time: 2022-09-12 22:26:48
  * @ Modified by: Captain
- * @ Modified time: 2022-09-12 22:35:43
+ * @ Modified time: 2022-09-16 01:55:08
  * @ Description:
  -->
 
 <template>
-	<section class="main-container-root">
+	<section class="main-content-root">
 		<transition name="fade-transform" mode="out-in">
 			<router-view :key="key" />
 		</transition>
@@ -31,7 +29,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.main-container-root {
+.main-content-root {
 	width: 100%;
+	height: 100%;
 }
 </style>
