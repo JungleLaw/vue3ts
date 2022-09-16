@@ -2,15 +2,15 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 22:26:48
  * @ Modified by: Captain
- * @ Modified time: 2022-09-16 01:55:08
+ * @ Modified time: 2022-09-16 14:57:59
  * @ Description:
  -->
 
 <template>
 	<section class="main-content-root">
-		<transition name="fade-transform" mode="out-in">
-			<router-view :key="key" />
-		</transition>
+		<!-- <transition name="fade-transform" mode="out-in"> -->
+		<router-view :key="key" />
+		<!-- </transition> -->
 	</section>
 </template>
 

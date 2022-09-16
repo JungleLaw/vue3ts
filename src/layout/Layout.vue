@@ -4,7 +4,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:06:39
  * @ Modified by: Captain
- * @ Modified time: 2022-09-16 01:59:00
+ * @ Modified time: 2022-09-16 10:21:50
  * @ Description:
  -->
 
@@ -13,7 +13,7 @@
 		<navi-bar></navi-bar>
 		<div class="main-content-container">
 			<div>slide</div>
-			<mian-content></mian-content>
+			<main-content></main-content>
 		</div>
 	</div>
 </template>
@@ -40,9 +40,7 @@ export default defineComponent({
 	flex-flow: column nowrap;
 	.main-content-container {
 		width: 100%;
-		// height: calc(100vh-50px);
-		height: 100%;
-		// min-height: 50px;
+		min-height: calc(100vh - 50px);
 		display: flex;
 		flex-flow: row nowrap;
 		background-color: aqua;

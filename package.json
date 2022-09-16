@@ -16,7 +16,9 @@
 		"axios": "^0.27.2",
 		"dayjs": "^1.11.5",
 		"element-plus": "^2.2.16",
+		"js-cookie": "^3.0.1",
 		"lodash": "^4.17.21",
+		"normalize.css": "7.0.0",
 		"pinia": "^2.0.21",
 		"vue": "^3.2.38",
 		"vue-router": "^4.1.5"

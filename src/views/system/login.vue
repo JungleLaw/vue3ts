@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:00:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-15 00:51:17
+ * @ Modified time: 2022-09-16 10:39:33
  * @ Description:
  -->
 
@@ -22,7 +22,7 @@
 				<el-form-item label="验证码" props="captcha">
 					<el-input class="captcha-input" v-model="loginForm.captcha" type="text" autocomplete="off" />
 				</el-form-item>
-				<div class="captcha-img-parent" @click="requestCaptcha">
+				<div class="captcha-wrapper" @click="requestCaptcha">
 					<img :src="captcha" alt="" class="captcha" />
 				</div>
 			</div>
@@ -95,7 +95,7 @@ export default defineComponent({
 		.captcha-input {
 			width: 100px;
 		}
-		.captcha-img-parent {
+		.captcha-wrapper {
 			width: 80px;
 			height: 50px;
 

@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-16 01:48:40
+ * @ Modified time: 2022-09-16 15:13:20
  * @ Description:
  *
  */
@@ -29,7 +29,15 @@ const basicRoutes: RouteRecordRaw[] = [
 	{
 		path: '/home',
 		name: 'Home',
-		component: () => import('../views/system/Home.vue'),
+		component: Layout,
+		redirect: '/home/index',
+		children: [
+			{
+				path: 'index',
+				name: 'Home',
+				component: () => import('../views/system/Home.vue'),
+			},
+		],
 	},
 	{
 		path: '/layout',

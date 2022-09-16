@@ -1,0 +1,44 @@
+/**
+ * @ Author: Captain
+ * @ Create Time: 2022-09-16 11:34:54
+ * @ Modified by: Captain
+ * @ Modified time: 2022-09-16 17:30:52
+ * @ Description:
+ */
+
+/* Color
+———————————————————— */
+
+// 侧边栏文字颜色
+$--color-classic-icon-off: #c6ced9;
+// 侧边栏文字颜色
+$--color-classic-icon-on: #ffffff;
+// 主色调-辅助色 / 选中、激活
+$--color-classic-primary-a2: rgba(56, 134, 255, 0.2);
+
+// body backround-color
+$bodyBgClassic: #f3f5fa;
+
+// sidebar
+$menuText: #bfcbd9;
+$menuActiveText: #409eff;
+$subMenuActiveTextClassic: #f4f4f5; //https://github.com/ElemeFE/element/issues/12951
+$menuBgClassic: #1c3e6b;
+$menuHoverClassic: #229dff;
+
+// $subMenuBg: #1f2d3d;
+$subMenuBgClassic: transparent;
+// $subMenuHover: #001528;
+$subMenuHoverClassic: #229dff;
+
+// the :export directive is the magic sauce for webpack
+// https://www.classicmatador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+	menuText: $menuText;
+	menuActiveText: $menuActiveText;
+	subMenuActiveTextClassic: $subMenuActiveTextClassic;
+	menuBgClassic: $menuBgClassic;
+	menuHoverClassic: $menuHoverClassic;
+	subMenuBgClassic: $subMenuBgClassic;
+	subMenuHoverClassic: $subMenuHoverClassic;
+}

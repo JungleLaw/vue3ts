@@ -1,0 +1,14 @@
+@import 'variables-classic.scss';
+
+$sidebarWidth: 220px;
+$sidebarCollapseWidth: 60px;
+$navbarHeight: 0;
+$hamburgerHeight: 40px;
+$pageHeaderHeight: 60px;
+
+:export {
+	hamburgerHeight: $hamburgerHeight;
+	sidebarWidth: $sidebarWidth;
+	navbarHeight: $navbarHeight;
+	pageHeaderHeight: $pageHeaderHeight;
+}

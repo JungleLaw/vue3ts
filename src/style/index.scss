@@ -1,0 +1,35 @@
+/**
+ * @ Author: Captain
+ * @ Create Time: 2022-09-16 11:26:27
+ * @ Modified by: Captain
+ * @ Modified time: 2022-09-16 11:38:49
+ * @ Description:
+ */
+
+@import 'variables.scss';
+
+body {
+	height: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-size: 12px;
+	font-family: PingFangSC-Medium, PingFang SC, Microsoft YaHei;
+
+	&.classic {
+		background-color: $bodyBgClassic;
+	}
+}
+
+label {
+	font-weight: 700;
+}
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+#app {
+	height: 100%;
+}
