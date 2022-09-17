@@ -2,12 +2,13 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 15:34:24
  * @ Modified by: Captain
- * @ Modified time: 2022-09-16 17:14:00
+ * @ Modified time: 2022-09-17 16:43:29
  * @ Description:
  */
 
-import { Settings } from './settings';
+import Settings from './settings';
 import { ThemeEnum } from './enum';
+import Logger from './Logger';
 
 const ThemeKey = `CURRENT_THEME_${Settings.projectName}`;
 export function getTheme(): ThemeEnum {
@@ -59,13 +60,15 @@ export function toggleClass(element, className): void {
 	}
 }
 
-export class Theme {
+class Theme {
 	static theme: ThemeEnum = getTheme();
-	public static setupTheme(): void {
-		console.log('theme', Theme.theme);
+	public static setupTheme(theme: ThemeEnum = ThemeEnum.Classic): void {
+		this.theme = theme;
+		Logger.info(this.theme);
 		toggleClass(document.body, this.theme);
 	}
 	public static getTheme(): ThemeEnum {
 		return this.theme as ThemeEnum;
 	}
 }
+export default Theme;

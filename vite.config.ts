@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-16 15:49:28
+ * @ Modified time: 2022-09-17 17:31:11
  * @ Description:
  */
 
@@ -36,7 +36,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 	console.log('环境变量------ %s', env.APP_ENV);
 	const viteEnv = wrapperEnv(env);
 	console.log('viteEnv', viteEnv);
-	const { VITE_PUBLIC_PATH, VITE_OUTPUT_DIR } = viteEnv;
+	const { VITE_PUBLIC_PATH, VITE_OUTPUT_DIR, VITE_DEBUG } = viteEnv;
 	const isBuild = command === 'build';
 	// console.log('文件路径（ process.cwd()）------', root);
 	// console.log('文件路径（dirname）------', __dirname + '/src');
@@ -79,6 +79,9 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 				},
 			},
 		},
+		esbuild: {
+			pure: VITE_DEBUG ? [] : ['console.log', 'debugger'],
+		},
 		build: {
 			target: 'es2015',
 			cssTarget: 'chrome80',
@@ -103,6 +106,9 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			// Suppress warning
 			__INTLIFY_PROD_DEVTOOLS__: false,
 			__APP_INFO__: JSON.stringify(__APP_INFO__),
+			process: {
+				debug: VITE_DEBUG,
+			},
 		},
 	};
 });

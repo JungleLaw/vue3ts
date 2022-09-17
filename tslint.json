@@ -52,7 +52,7 @@
 		// 不允许使用特殊运算符 &, &=, |, |=, ^, ^=, <<, <<=, >>, >>=, >>>, >>>=, ~
 		"no-conditional-assignment": true,
 		// do while/for/if/while 语句中将会对例如if(a=b)进行检查
-		"no-console": false,
+		"no-console": true,
 		// 不允许使用console对象
 		"no-debugger": true,
 		// 不允许使用debugger

@@ -1,17 +1,23 @@
 <template>
-	<div class="navi-bar-root">
+	<div class="navi-bar-root flex">
 		<div class="app-logo-wrapper">
-			<img v-if="!collapse" class="logo-collapse" :src="logo" alt="hcttop-logo" />
+			<app-logo></app-logo>
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
-import logo from '@/assets/global/app-logo-classic.png';
+import Logo from '@/assets/global/app-logo-classic.png';
+import AppLogo from './AppLogo.vue';
+
 import { defineComponent } from 'vue';
+import Logger from '@/global/Logger';
 
 export default defineComponent({
 	name: 'NaviBar',
+	components: {
+		AppLogo,
+	},
 	props: {
 		collapse: {
 			type: Boolean,
@@ -19,16 +25,32 @@ export default defineComponent({
 		},
 	},
 	data() {
-		return { logo };
+		return { Logo };
+	},
+	mounted() {
+		Logger.info('abc', 'bbc', 'ddc');
+		// console.log('a');
+		// console.warn('b');
+		// console.error('c');
+		// console.info('d');
+		// console.debug('e');
+		// console.trace();
 	},
 });
 </script>
 
 <style lang="scss" scoped>
+@import '@/style/variables.scss';
 .navi-bar-root {
-	width: 100%;
-	height: 50px;
-	line-height: 50px;
+	height: $navbarHeight;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+	&.flex {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
 	.app-logo-wrapper {
 		width: 332px;

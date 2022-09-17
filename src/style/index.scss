@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 11:26:27
  * @ Modified by: Captain
- * @ Modified time: 2022-09-16 11:38:49
+ * @ Modified time: 2022-09-17 14:28:00
  * @ Description:
  */
 
@@ -32,4 +32,11 @@ html {
 
 #app {
 	height: 100%;
+}
+.classic .navi-bar-root {
+	background-color: #0f2d53;
+	.svg-icon.icon-theme,
+	.svg-icon.icon-notice {
+		color: green;
+	}
 }

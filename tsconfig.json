@@ -33,7 +33,7 @@
 		/* Report errors on unused locals. */
 		"noUnusedParameters": false,
 		/* Report errors on unused parameters. */
-		"noImplicitReturns": false,
+		"noImplicitReturns": true,
 		/* Report error when not all code paths in function return a value. */
 		"experimentalDecorators": true,
 		"skipLibCheck": true,
