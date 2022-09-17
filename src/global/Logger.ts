@@ -2,12 +2,15 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-17 17:56:59
+ * @ Modified time: 2022-09-17 18:12:46
  * @ Description:
  */
+
+const LOG_STYLE = 'font-size:20px;color:red;';
+
 const log = (tag: string = 'Logger', msg: any, ...optionalParams: any[]) => {
 	// tslint:disable-next-line:no-console
-	console.log(`${tag}=>%o`, msg, ...optionalParams);
+	console.log(`%c${tag}=>%o`, LOG_STYLE, msg, ...optionalParams);
 };
 
 class Logger {
