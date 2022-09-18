@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 15:55:25
  * @ Modified by: Captain
- * @ Modified time: 2022-09-18 14:05:27
+ * @ Modified time: 2022-09-18 17:21:54
  * @ Description:
  */
 
@@ -20,11 +20,11 @@ export default class Initialization {
 		// console.log('=========');
 
 		Logger.log('a%dbb', 1);
-		Logger.info('Tag', process);
-		Logger.error('Tag', process);
-		Logger.warn('Tag', process);
-		Logger.debug('Tag', process);
-		// Logger.track('Tag', process);
+		Logger.info('Tag', window.document);
+		Logger.error('Tag', window.document);
+		Logger.warn('Tag', window.document);
+		Logger.debug('Tag', window.document);
+		Logger.track('Tag', window.document);
 		Theme.setupTheme();
 		app.config.errorHandler = () => {
 			Logger.log('app error');
