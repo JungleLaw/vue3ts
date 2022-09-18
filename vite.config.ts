@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-17 17:31:11
+ * @ Modified time: 2022-09-18 04:04:46
  * @ Description:
  */
 
@@ -36,8 +36,9 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 	console.log('环境变量------ %s', env.APP_ENV);
 	const viteEnv = wrapperEnv(env);
 	console.log('viteEnv', viteEnv);
-	const { VITE_PUBLIC_PATH, VITE_OUTPUT_DIR, VITE_DEBUG } = viteEnv;
+	const { VITE_PUBLIC_PATH, VITE_OUTPUT_DIR, VITE_DROP_CONSOLE } = viteEnv;
 	const isBuild = command === 'build';
+	console.log('VITE_DROP_CONSOLE', VITE_DROP_CONSOLE);
 	// console.log('文件路径（ process.cwd()）------', root);
 	// console.log('文件路径（dirname）------', __dirname + '/src');
 	// console.log('import.meta.url', import.meta.url);
@@ -80,7 +81,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			},
 		},
 		esbuild: {
-			pure: VITE_DEBUG ? [] : ['console.log', 'debugger'],
+			pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : [],
 		},
 		build: {
 			target: 'es2015',
@@ -107,8 +108,9 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			__INTLIFY_PROD_DEVTOOLS__: false,
 			__APP_INFO__: JSON.stringify(__APP_INFO__),
 			process: {
-				debug: VITE_DEBUG,
+				DROP_LOG: VITE_DROP_CONSOLE,
 			},
+			env,
 		},
 	};
 });
