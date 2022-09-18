@@ -7,7 +7,7 @@
  */
 
 import Settings from './Settings';
-import { ThemeEnum } from './enum';
+import { ThemeEnum } from './Enum';
 
 const ThemeKey = `CURRENT_THEME_${Settings.projectName}`;
 export function getTheme(): ThemeEnum {

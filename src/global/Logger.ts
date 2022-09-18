@@ -2,10 +2,12 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-18 04:41:20
+ * @ Modified time: 2022-09-18 14:05:52
  * @ Description:
  */
-
+const style = (color: string) => {
+	return `background:${color}; padding: 2px 10px; border-radius: 3px;  color: #fff; font-size: 16px;`;
+};
 class Logger {
 	private static readonly drop: boolean = process['DROP_LOG'];
 	// private static readonly drop: boolean = false;
@@ -41,9 +43,14 @@ class Logger {
 			default:
 				fn = console.log;
 		}
-		console.group(`%c${tag}`, `background:${type['color']} ; padding: 2px 10px; border-radius: 3px ;  color: #fff`);
-		fn(msg, ...optionalParams);
-		console.groupEnd();
+		// console.group(`%c${tag}`, style(type['color']));
+		// fn(msg, ...optionalParams);
+		// console.groupEnd();
+		if (typeof msg === 'string' && msg.includes('%')) {
+			fn(`%c${tag} %c ${msg} `, style(type['color']), '', ...optionalParams);
+		} else {
+			fn(`%c${tag} %c %o `, style(type['color']), '', msg, ...optionalParams);
+		}
 	}
 	/**
 	 *
