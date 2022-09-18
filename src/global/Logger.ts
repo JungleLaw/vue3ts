@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-18 14:05:52
+ * @ Modified time: 2022-09-18 14:28:15
  * @ Description:
  */
 const style = (color: string) => {
@@ -13,9 +13,9 @@ class Logger {
 	// private static readonly drop: boolean = false;
 	private static readonly Type = {
 		Default: { value: 0, color: '#41b883' },
-		Info: { value: 1, color: 'blue' },
-		Warn: { value: 2, color: 'orange' },
-		Error: { value: 3, color: 'red' },
+		Info: { value: 1, color: '#127FC6' },
+		Warn: { value: 2, color: '#FF7809' },
+		Error: { value: 3, color: '#E50404' },
 		Debug: { value: 4, color: '#35495e' },
 		Track: { value: 5, color: '#001528' },
 	};
@@ -59,21 +59,21 @@ class Logger {
 	 * @param args
 	 */
 	public static log(msg: any, ...optionalParams: any[]) {
-		Logger.print(Logger.Type.Default, 'Logger', msg, ...optionalParams);
+		Logger.print(Logger.Type.Default, 'Log', msg, ...optionalParams);
 	}
-	public static info(tag: string = 'Logger info', msg: any, ...optionalParams: any[]) {
+	public static info(tag: string = 'Log info', msg: any, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Info, tag, msg, ...optionalParams);
 	}
-	public static warn(tag: string = 'Logger warn', msg: any, ...optionalParams: any[]) {
+	public static warn(tag: string = 'Log warn', msg: any, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Warn, tag, msg, ...optionalParams);
 	}
-	public static error(tag: string = 'Logger error', msg: any, ...optionalParams: any[]) {
+	public static error(tag: string = 'Log error', msg: any, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Error, tag, msg, ...optionalParams);
 	}
-	public static debug(tag: string = 'Logger debug', msg: any, ...optionalParams: any[]) {
+	public static debug(tag: string = 'Log debug', msg: any, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Debug, tag, msg, ...optionalParams);
 	}
-	public static track(tag: string = 'Logger track', msg: any, ...optionalParams: any[]) {
+	public static track(tag: string = 'Log track', msg: any, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Track, tag, msg, ...optionalParams);
 	}
 }
