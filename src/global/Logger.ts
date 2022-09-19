@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-19 09:19:51
+ * @ Modified time: 2022-09-19 23:06:59
  * @ Description:
  */
 const style = (color: string) => {
@@ -18,10 +18,6 @@ const getSourceLink = () => {
 	const url: URL = new URL(window.location.href);
 	url.href = 'https://www.163.com';
 	return url;
-	// const link: Element = document.createElement('a');
-	// const newContent = document.createTextNode('Hi there and greetings!');
-	// link.appendChild(newContent);
-	// return link;
 };
 class Logger {
 	/**
@@ -100,8 +96,12 @@ class Logger {
 		// tslint:disable-next-line:no-console
 		console.group(`%c${tag}%c %s`, style(type['color']), '', `@ ${line}`);
 		// console.group(`%c${tag}%c @ %s`, style(type['color']), '', getSourceLink());
-		if (typeof msg === 'string' && msg.includes('%')) {
-			fn(`${msg}`, ...optionalParams);
+		if (typeof msg === 'string') {
+			// if (msg.includes('%')) {
+			// 	fn(msg, ...optionalParams);
+			// } else {
+			fn(msg, ...optionalParams);
+			// }
 		} else {
 			fn(`%c${msg}%o`, `text-align: start;font-size: 14px;color:${type['color']};`, msg, ...optionalParams);
 		}
