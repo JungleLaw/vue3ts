@@ -11,7 +11,6 @@ import Logo from '@/assets/global/app-logo-classic.png';
 import AppLogo from './AppLogo.vue';
 
 import { defineComponent } from 'vue';
-import Logger from '@/global/Logger';
 
 export default defineComponent({
 	name: 'NaviBar',
@@ -28,7 +27,7 @@ export default defineComponent({
 		return { Logo };
 	},
 	mounted() {
-		Logger.info('abc', 'bbc', 'ddc');
+		// Logger.log('abc', 'bbc', 'ddc');
 		// console.log('a');
 		// console.warn('b');
 		// console.error('c');

@@ -4,7 +4,7 @@
  * @ Modified by: Captain
  * @ Modified time: 2022-09-17 16:40:02
  * @ Modified by: Captain
- * @ Modified time: 2022-09-17 16:40:02
+ * @ Modified time: 2022-09-18 17:00:22
  *
  */
 
@@ -19,7 +19,10 @@ import App from './App.vue';
 import router from './router';
 
 import Initialization from './global/Initialization';
+import Logger from './global/Logger';
 
+// console.log = Logger.log;
+console.log('aa');
 const app = createApp(App);
 Initialization.setup(app);
 

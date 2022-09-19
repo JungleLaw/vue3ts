@@ -2,17 +2,27 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-17 18:12:46
+ * @ Modified time: 2022-09-19 09:19:51
  * @ Description:
  */
-
-const LOG_STYLE = 'font-size:20px;color:red;';
-
-const log = (tag: string = 'Logger', msg: any, ...optionalParams: any[]) => {
-	// tslint:disable-next-line:no-console
-	console.log(`%c${tag}=>%o`, LOG_STYLE, msg, ...optionalParams);
+const style = (color: string) => {
+	return `background:${color}; padding: 2px 10px; border-radius: 3px;  color: #fff; font-size: 16px;`;
+};
+const getStackTrace = () => {
+	const obj = {};
+	Error.captureStackTrace(obj, getStackTrace);
+	return obj['stack'];
 };
 
+const getSourceLink = () => {
+	const url: URL = new URL(window.location.href);
+	url.href = 'https://www.163.com';
+	return url;
+	// const link: Element = document.createElement('a');
+	// const newContent = document.createTextNode('Hi there and greetings!');
+	// link.appendChild(newContent);
+	// return link;
+};
 class Logger {
 	/**
 	 *
@@ -20,37 +30,88 @@ class Logger {
 	 * @param msg
 	 * @param args
 	 */
-	// tag: string = 'Logger',
-	public static info(tag: string, msg: any, ...optionalParams: any[]) {
-		if (this.debug) {
-			// tslint:disable-next-line:no-console
-			log(tag, msg, ...optionalParams);
-		}
+	public static log(msg: any, ...optionalParams: any[]) {
+		Logger.print(Logger.Type.Default, 'Log', msg, ...optionalParams);
 	}
-	public static setDebug(debug: boolean): void {
-		this.debug = debug;
+	public static info(tag: string = 'Log info', msg: any, ...optionalParams: any[]) {
+		Logger.print(Logger.Type.Info, tag, msg, ...optionalParams);
 	}
-	private static readonly Type = {
-		Info: 1,
-		Warn: 2,
-		Error: 3,
-		Debug: 4,
-		Track: 5,
-	};
-	private static debug: boolean = process.debug;
+	public static warn(tag: string = 'Log warn', msg: any, ...optionalParams: any[]) {
+		Logger.print(Logger.Type.Warn, tag, msg, ...optionalParams);
+	}
+	public static error(tag: string = 'Log error', msg: any, ...optionalParams: any[]) {
+		Logger.print(Logger.Type.Error, tag, msg, ...optionalParams);
+	}
+	public static debug(tag: string = 'Log debug', msg: any, ...optionalParams: any[]) {
+		Logger.print(Logger.Type.Debug, tag, msg, ...optionalParams);
+	}
+	public static track(tag: string = 'Log track', msg: any, ...optionalParams: any[]) {
+		Logger.print(Logger.Type.Track, tag, msg, ...optionalParams);
+	}
 
-	private static convert(msg: any): string {
-		const type: string = typeof msg;
+	private static readonly drop: boolean = process['DROP_LOG'];
+	// private static readonly drop: boolean = false;
+	private static readonly Type = {
+		Default: { value: 0, color: '#1DD300' },
+		Info: { value: 1, color: '#02C6E1' },
+		Warn: { value: 2, color: '#FF8613' },
+		Error: { value: 3, color: '#FE0C1E' },
+		Debug: { value: 4, color: '#35495e' },
+		Track: { value: 5, color: '#3B1946' },
+	};
+	private static print(type: object, tag: string, msg: any, ...optionalParams: any[]) {
+		if (Logger.drop) return;
+		let fn: Function;
 		switch (type) {
-			case 'string':
+			case Logger.Type.Info:
+				// tslint:disable-next-line:no-console
+				fn = console.info;
 				break;
-			case 'number':
+			case Logger.Type.Warn:
+				// tslint:disable-next-line:no-console
+				fn = console.warn;
 				break;
-			case 'object':
+			case Logger.Type.Error:
+				// tslint:disable-next-line:no-console
+				fn = console.error;
+				break;
+			case Logger.Type.Debug:
+				// tslint:disable-next-line:no-console
+				fn = console.debug;
+				break;
+			case Logger.Type.Track:
+				// tslint:disable-next-line:no-console
+				fn = console.trace;
 				break;
 			default:
+				// tslint:disable-next-line:no-console
+				fn = console.log;
 		}
-		return '';
+
+		const stack = getStackTrace() || '';
+		// console.log('stack', stack);
+		const matchResult = stack.match(/\(.*?\)/g) || [];
+		// console.log('matchResult', matchResult);
+		let line = matchResult[matchResult.length - 1] || '';
+		// console.log('line', line);
+		if (line) {
+			line = line.substring(1, line.length - 1);
+		}
+		// tslint:disable-next-line:no-console
+		console.group(`%c${tag}%c %s`, style(type['color']), '', `@ ${line}`);
+		// console.group(`%c${tag}%c @ %s`, style(type['color']), '', getSourceLink());
+		if (typeof msg === 'string' && msg.includes('%')) {
+			fn(`${msg}`, ...optionalParams);
+		} else {
+			fn(`%c${msg}%o`, `text-align: start;font-size: 14px;color:${type['color']};`, msg, ...optionalParams);
+		}
+		// tslint:disable-next-line:no-console
+		console.groupEnd();
+		// if (typeof msg === 'string' && msg.includes('%')) {
+		// 	fn(`%c${tag} %c ${msg} `, style(type['color']), '', ...optionalParams);
+		// } else {
+		// 	fn(`%c${tag} %c %o `, style(type['color']), '', msg, ...optionalParams);
+		// }
 	}
 }
 

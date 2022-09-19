@@ -1,0 +1,9 @@
+@import 'variables.scss';
+
+.classic .navi-bar-root {
+	background-color: #0f2d53;
+	.svg-icon.icon-theme,
+	.svg-icon.icon-notice {
+		color: green;
+	}
+}

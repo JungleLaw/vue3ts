@@ -2,13 +2,12 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 15:34:24
  * @ Modified by: Captain
- * @ Modified time: 2022-09-17 16:43:29
+ * @ Modified time: 2022-09-18 04:34:39
  * @ Description:
  */
 
-import Settings from './settings';
-import { ThemeEnum } from './enum';
-import Logger from './Logger';
+import Settings from './Settings';
+import { ThemeEnum } from './Enum';
 
 const ThemeKey = `CURRENT_THEME_${Settings.projectName}`;
 export function getTheme(): ThemeEnum {
@@ -33,15 +32,12 @@ export function removeTheme() {
  * @returns
  */
 export function toggleClass(element, className): void {
-	console.log('className', className);
 	const el = element;
 	if (!el || !className) {
 		return;
 	}
 	let classString = el.className;
-	console.log('classString', classString);
 	const nameIndex = classString.indexOf(className);
-	console.log('nameIndex', nameIndex);
 	if (nameIndex === -1) {
 		// classString += "" + className;
 		if (classString) {
@@ -50,7 +46,6 @@ export function toggleClass(element, className): void {
 		} else {
 			classString += `${className}`;
 		}
-		console.log('classString', classString);
 	} else {
 		classString = classString.substr(0, nameIndex) + classString.substr(nameIndex + className.length);
 	}
@@ -64,7 +59,6 @@ class Theme {
 	static theme: ThemeEnum = getTheme();
 	public static setupTheme(theme: ThemeEnum = ThemeEnum.Classic): void {
 		this.theme = theme;
-		Logger.info(this.theme);
 		toggleClass(document.body, this.theme);
 	}
 	public static getTheme(): ThemeEnum {

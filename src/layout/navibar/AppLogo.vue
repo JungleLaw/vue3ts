@@ -23,7 +23,7 @@ export default defineComponent({
 		};
 	},
 	mounted() {
-		console.log(this.$settings);
+		// console.log(this.$settings);
 	},
 });
 </script>
