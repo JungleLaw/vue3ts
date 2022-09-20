@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-19 23:06:59
+ * @ Modified time: 2022-09-21 01:07:12
  * @ Description:
  */
 const style = (color: string) => {
@@ -88,7 +88,7 @@ class Logger {
 		// console.log('stack', stack);
 		const matchResult = stack.match(/\(.*?\)/g) || [];
 		// console.log('matchResult', matchResult);
-		let line = matchResult[matchResult.length - 1] || '';
+		let line = matchResult[2] || '';
 		// console.log('line', line);
 		if (line) {
 			line = line.substring(1, line.length - 1);
