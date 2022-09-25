@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 11:34:54
  * @ Modified by: Captain
- * @ Modified time: 2022-09-16 17:30:52
+ * @ Modified time: 2022-09-25 04:12:33
  * @ Description:
  */
 
@@ -31,6 +31,9 @@ $subMenuBgClassic: transparent;
 // $subMenuHover: #001528;
 $subMenuHoverClassic: #229dff;
 
+// $naviBackground: #0f2d53;
+$naviBgClassic: #0f2d53;
+
 // the :export directive is the magic sauce for webpack
 // https://www.classicmatador.com/blog/how-to-share-variables-between-js-and-sass
 :export {
@@ -41,4 +44,5 @@ $subMenuHoverClassic: #229dff;
 	menuHoverClassic: $menuHoverClassic;
 	subMenuBgClassic: $subMenuBgClassic;
 	subMenuHoverClassic: $subMenuHoverClassic;
+	naviBgClassic: $naviBgClassic;
 }
