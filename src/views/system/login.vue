@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:00:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-16 10:39:33
+ * @ Modified time: 2022-09-28 00:00:19
  * @ Description:
  -->
 
@@ -39,6 +39,7 @@ import logo from '@/assets/logo.svg';
 import ComponentA from '@/components/ComponentA/index.vue';
 import ComponentB from '@/components/ComponentB/index.vue';
 import { captcha, login } from '@/api/login';
+import Logger from '@/global/Logger';
 
 export default defineComponent({
 	components: {
@@ -60,13 +61,14 @@ export default defineComponent({
 		this.requestCaptcha();
 	},
 	methods: {
-		async login() {
-			console.log('do login', this.loginForm);
-			const result = await login(this.loginForm);
-			console.log('login', result);
-			// this.$router.push({
-			// 	path: this.redirect || '/home',
-			// });
+		login() {
+			Logger.debug('tag', 'login');
+			// console.log('do login', this.loginForm);
+			// const result = await login(this.loginForm);
+			// console.log('login', result);
+			this.$router.push({
+				path: '/home',
+			});
 		},
 		async requestCaptcha() {
 			const result: { data: string } = await captcha();

@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-26 00:10:15
+ * @ Modified time: 2022-09-28 02:00:56
  * @ Description:
  *
  */
@@ -14,7 +14,10 @@ interface Visible {
 	visible: boolean;
 }
 
-type RouterItem = RouteRecordRaw & Visible;
+type RouterItem = RouteRecordRaw &
+	Visible & {
+		children?: RouterItem[];
+	};
 
 const basicRoutes: RouterItem[] = [
 	{
@@ -41,25 +44,22 @@ const basicRoutes: RouterItem[] = [
 		component: Layout,
 		redirect: '/home/index',
 		visible: true,
+		meta: { title: 'Dashboard', icon: 'dashboard' },
 		children: [
 			{
 				path: 'index',
 				name: 'Home',
 				component: () => import('../views/system/Home.vue'),
+				visible: true,
+				meta: { title: 'Home', icon: 'home' },
 			},
 		],
-	},
-	{
-		path: '/layout',
-		name: 'Layout',
-		component: Layout,
-		visible: true,
 	},
 	{
 		path: '/404',
 		name: 'NotFound',
 		component: () => import('../views/system/NotFound.vue'),
-		visible: true,
+		visible: false,
 	},
 ];
 const router = createRouter({

@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 10:23:08
  * @ Modified by: Captain
- * @ Modified time: 2022-09-25 23:56:15
+ * @ Modified time: 2022-09-28 00:01:50
  * @ Description:
  -->
 
@@ -16,9 +16,13 @@
 				:collapse-transition="false"
 				mode="vertical"
 			>
-				<div v-for="route in routes" :key="route.path" :item="route" :base-path="route.path">
-					<div>{{ route.name }}</div>
-				</div>
+				<SlideItem
+					v-for="(route, index) in routes"
+					:index="index"
+					:key="route.path"
+					:item="route"
+					:base-path="route.path"
+				></SlideItem>
 			</el-menu>
 		</el-scrollbar>
 	</div>
@@ -26,6 +30,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import SlideItem from './SlideItem.vue';
 
 export default defineComponent({
 	name: 'SlideBar',
@@ -39,6 +44,7 @@ export default defineComponent({
 			return this.$router.options.routes;
 		},
 	},
+	components: { SlideItem },
 });
 </script>
 
