@@ -1,25 +1,62 @@
+<!--
+ * @ Author: Captain
+ * @ Create Time: 2022-09-25 15:35:00
+ * @ Modified by: Captain
+ * @ Modified time: 2022-10-08 02:02:27
+ * @ Description:
+ -->
+
 <template>
-	<div class="slide-item-root" v-if="!item.hidden">
-		<template v-if="singleShownChildRouter(item)"> </template>
-		<el-sub-menu ref="subMenu" :index="index.toString()">
-			<template v-slot:title>
+	<div class="slide-item-root" v-if="item.visible">
+		<template
+			v-if="
+				singleVisibleChildRouter(item) &&
+				(!visibleRouter.children || visibleRouter.hasVisibleChildren) &&
+				!visibleRouter.alwaysShow
+			"
+		>
+			<link-item v-if="visibleRouter.meta" :to="resolvePath(visibleRouter.path)">
+				<el-menu-item :index="resolvePath(visibleRouter.path)" :class="{ 'submenu-title-noDropdown': !isNest }">
+					<slide-title
+						v-if="item.meta"
+						:icon="item.meta && item.meta.icon"
+						:title="item.meta.title"
+					></slide-title>
+				</el-menu-item>
+			</link-item>
+		</template>
+		<el-sub-menu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
+			<template #title>
 				<slide-title
 					v-if="item.meta"
 					:icon="item.meta && item.meta.icon"
 					:title="item.meta.title"
 				></slide-title>
 			</template>
+			<slide-item
+				class="nest-menu"
+				v-for="(child, index) in item.children || []"
+				:index="index"
+				:key="child.path"
+				:item="child"
+				:is-nest="true"
+				:base-path="resolvePath(child.path)"
+			>
+			</slide-item>
 		</el-sub-menu>
 	</div>
 </template>
 
 <script lang="ts">
+import { isUrl } from '@/commons/validator';
+import path from 'path-browserify';
 import { defineComponent } from 'vue';
 import SlideTitle from './SlideTitle.vue';
+import LinkItem from './LinkItem.vue';
 
 export default defineComponent({
 	name: 'SlideItem',
-	components: { SlideTitle },
+	components: { SlideTitle, LinkItem },
 	props: {
 		index: {
 			type: Number,
@@ -38,29 +75,55 @@ export default defineComponent({
 			default: '',
 		},
 	},
+	// emits: {
+	// 	select: val => {
+	// 		return true;
+	// 	},
+	// 	open: val => {
+	// 		return true;
+	// 	},
+	// },
 	data() {
 		return {
-			singleRouer: {},
+			visibleRouter: {
+				meta: {
+					icon: '',
+					title: '',
+				},
+				children: [],
+				hasVisibleChildren: false,
+				alwaysShow: false,
+				path: '',
+			},
 		};
 	},
 	methods: {
-		singleShownChildRouter(router): Boolean {
-			const shownRouters =
+		singleVisibleChildRouter(router): Boolean {
+			const visibleRouters =
 				router.children?.filter(item => {
 					if (!item.visible) {
 						return false;
 					}
-					this.singleRouer = item;
+					this.visibleRouter = item;
 					return true;
 				}) || [];
-			if (shownRouters.length === 1) {
+			if (visibleRouters.length === 1) {
 				return true;
 			}
-			if (shownRouters.length === 0) {
-				this.singleRouer = { ...parent, path: '', noShowingChildren: true };
+			if (visibleRouters.length === 0) {
+				this.visibleRouter = { ...router, path: '', hasVisibleChildren: true };
 				return true;
 			}
 			return false;
+		},
+		resolvePath(routePath) {
+			if (isUrl(routePath)) {
+				return routePath;
+			}
+			if (isUrl(this.basePath)) {
+				return this.basePath;
+			}
+			return path.resolve(this.basePath, routePath);
 		},
 	},
 });

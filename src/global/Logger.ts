@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-09-21 01:07:12
+ * @ Modified time: 2022-10-02 04:21:05
  * @ Description:
  */
 const style = (color: string) => {
@@ -103,7 +103,13 @@ class Logger {
 			fn(msg, ...optionalParams);
 			// }
 		} else {
-			fn(`%c${msg}%o`, `text-align: start;font-size: 14px;color:${type['color']};`, msg, ...optionalParams);
+			fn(
+				`%c${msg}%c %o`,
+				`text-align: start;font-size: 14px;color:${type['color']};`,
+				'',
+				msg,
+				...optionalParams,
+			);
 		}
 		// tslint:disable-next-line:no-console
 		console.groupEnd();

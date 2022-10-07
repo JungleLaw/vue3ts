@@ -2,11 +2,11 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 15:55:25
  * @ Modified by: Captain
- * @ Modified time: 2022-09-21 01:04:49
+ * @ Modified time: 2022-10-08 01:58:22
  * @ Description:
  */
 
-import { App } from 'vue';
+import { App, reactive } from 'vue';
 import Logger from '@/global/Logger';
 import Theme from '@/global/Theme';
 import Settings from '@/global/Settings';
@@ -19,7 +19,7 @@ export default class Initialization {
 		// console.log('Tag', process);
 		// console.log('=========');
 
-		Logger.log('setup');
+		// Logger.log('setup');
 		// Logger.log('setup', 111, 222);
 		// Logger.log('a%dbb', 111, 222);
 		// Logger.info('Tag', window.document);
@@ -28,10 +28,10 @@ export default class Initialization {
 		// Logger.debug('Tag', window.document);
 		// Logger.track('Tag', window.document);
 		Theme.setupTheme();
-		app.config.errorHandler = () => {
-			Logger.log('app error');
+		app.config.errorHandler = error => {
+			Logger.error('app error', error);
 		};
-		app.config.globalProperties.$settings = Settings;
+		app.config.globalProperties.$settings = reactive(Settings);
 	}
 	private constructor() {
 		throw new Error('cannot excute private constructor');
