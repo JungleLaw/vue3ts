@@ -4,7 +4,7 @@
  * @ Modified by: Captain
  * @ Modified time: 2022-09-17 16:40:02
  * @ Modified by: Captain
- * @ Modified time: 2022-10-08 17:11:24
+ * @ Modified time: 2022-10-08 17:29:36
  *
  */
 
@@ -19,7 +19,6 @@ import App from './App';
 import router from './router';
 
 import Initialization from './global/Initialization';
-import Logger from './global/Logger';
 
 const app = createApp(App);
 Initialization.setup(app);

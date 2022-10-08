@@ -2,11 +2,10 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 11:26:27
  * @ Modified by: Captain
- * @ Modified time: 2022-09-18 01:26:54
+ * @ Modified time: 2022-09-25 02:49:53
  * @ Description:
  */
-
-@import 'theme-classic.scss';
+@import 'themes.scss';
 
 body {
 	height: 100%;
@@ -32,4 +31,38 @@ html {
 
 #app {
 	height: 100%;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+	outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+	cursor: pointer;
+	color: inherit;
+	text-decoration: none;
+}
+
+div:focus {
+	outline: none;
+}
+
+.clearfix {
+	&:after {
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: ' ';
+		clear: both;
+		height: 0;
+	}
 }

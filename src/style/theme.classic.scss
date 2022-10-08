@@ -1,0 +1,14 @@
+@import 'variables.scss';
+@import 'variables.classic.scss';
+
+.classic .navi-bar-root {
+	background-color: $naviBgClassic;
+	.svg-icon.icon-theme,
+	.svg-icon.icon-notice {
+		color: '#ffffff';
+	}
+}
+
+.classic .slidebar-root {
+	background-color: $menuBgClassic;
+}

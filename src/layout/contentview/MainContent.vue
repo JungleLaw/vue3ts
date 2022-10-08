@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 22:26:48
  * @ Modified by: Captain
- * @ Modified time: 2022-09-16 14:57:59
+ * @ Modified time: 2022-09-25 04:42:45
  * @ Description:
  -->
 
@@ -30,7 +30,12 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .main-content-root {
+	height: calc(100vh - 50px);
 	width: 100%;
-	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.fixed-header .app-main {
+	padding-top: 50px;
 }
 </style>

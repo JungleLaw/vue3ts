@@ -54,10 +54,10 @@ export default defineComponent({
 	.app-logo-wrapper {
 		width: 332px;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
 		text-align: center;
-		padding: 12px 0;
+		padding: 0 12px;
 
 		.logo-collapse {
 			//margin-left: -41px;
