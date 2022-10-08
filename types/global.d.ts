@@ -21,3 +21,10 @@ declare global {
 		VITE_OUTPUT_DIR: string;
 	}
 }
+// import 'vue';
+
+// declare module 'vue' {
+// 	interface HTMLAttributes {
+// 		vLoading?: unknown;
+// 	}
+// }
