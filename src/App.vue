@@ -1,3 +1,12 @@
+<!--
+ * @ Author: Captain
+ * @ Create Time: 2022-09-08 14:35:07
+ * @ Modified by: Captain
+ * @ Modified time: 2022-10-08 18:22:51
+ * @ Description:
+ -->
+
+<script lang="tsx">
 import { RouterView } from 'vue-router';
 import { defineComponent } from 'vue';
 import Logger from './global/Logger';
@@ -13,6 +22,7 @@ export default defineComponent({
 			<>
 				<div className="app-root">
 					<router-view></router-view>
+					<div className="aaa">AAA</div>
 				</div>
 			</>
 		);
@@ -27,3 +37,13 @@ export default defineComponent({
 	// 	);
 	// },
 });
+</script>
+
+<style scoped>
+.aaa {
+	font-size: 20px;
+	color: aqua;
+	background-color: red;
+	z-index: 9000;
+}
+</style>
