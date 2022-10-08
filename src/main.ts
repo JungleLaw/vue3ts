@@ -4,7 +4,7 @@
  * @ Modified by: Captain
  * @ Modified time: 2022-09-17 16:40:02
  * @ Modified by: Captain
- * @ Modified time: 2022-10-08 01:58:33
+ * @ Modified time: 2022-10-08 23:25:45
  *
  */
 
@@ -15,7 +15,7 @@ import './style/index.scss';
 import { createPinia } from 'pinia';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
-import App from './App.vue';
+import App from './App';
 import router from './router';
 
 import Initialization from './global/Initialization';

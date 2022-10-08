@@ -82,7 +82,7 @@
 		// 在使用前必须声明
 		"no-var-keyword": true,
 		// 不允许使用var
-		"radix": false,
+		"radix": true,
 		// parseInt时，必须输入radix精度参数
 		// "restrict-plus-operands":true,// 不允许自动类型转换，如果已设置不允许使用关键字var该设置无效
 		"triple-equals": false,
@@ -95,9 +95,9 @@
 		// 每行开始以4个空格符开始
 		"max-classes-per-file": [true, 1],
 		// 每个文件中可定义类的个数
-		"max-file-line-count": [true, 1000],
+		"max-file-line-count": [true, 500],
 		// 定义每个文件代码行数
-		"max-line-length": [true, 300],
+		"max-line-length": [true, 120],
 		// 定义每行代码数
 		"no-default-export": false,
 		// 禁止使用export default关键字，因为当export对象名称发生变化时，需要修改import中的对象名。https://github.com/palantir/tslint/issues/1182#issue-151780453
@@ -113,7 +113,7 @@
 		// 类名以大驼峰格式命名
 		"comment-format": [true, "check-space"],
 		// 定义注释格式
-		"encoding": false,
+		"encoding": true,
 		// 定义编码格式默认utf-8
 		"import-spacing": true,
 		// import关键字后加空格
