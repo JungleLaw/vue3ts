@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-10-07 03:57:55
+ * @ Modified time: 2022-10-09 01:56:10
  * @ Description:
  *
  */
@@ -93,6 +93,23 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/vue/Penetrate.vue'),
 				visible: true,
 				meta: { title: 'Penetrate', icon: 'penetrate' },
+			},
+		],
+	},
+	{
+		path: '/tsx',
+		name: 'Tsx',
+		component: Layout,
+		redirect: '/tsx/index',
+		visible: true,
+		meta: { title: 'Tsx', icon: 'tsx' },
+		children: [
+			{
+				path: 'index',
+				name: 'Index',
+				component: () => import('../views/tsx/Index'),
+				visible: true,
+				meta: { title: 'Index', icon: 'index' },
 			},
 		],
 	},
