@@ -32,10 +32,7 @@ export default defineComponent({
 			settings: reactive(this.$settings),
 		};
 	},
-	mounted() {
-		// console.log(this.$settings);
-		Logger.info('this.settings', this.settings);
-	},
+	mounted() {},
 	methods: {
 		AppLogo() {
 			return this.ClassicLogo;
@@ -44,8 +41,8 @@ export default defineComponent({
 	watch: {
 		settings: {
 			handler(newName, oldName) {
-				Logger.info('newName', newName);
-				Logger.info('oldName', oldName);
+				// Logger.info('newName', newName);
+				// Logger.info('oldName', oldName);
 			},
 			immediate: true,
 			deep: true,

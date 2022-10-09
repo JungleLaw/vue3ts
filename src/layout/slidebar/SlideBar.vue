@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 10:23:08
  * @ Modified by: Captain
- * @ Modified time: 2022-09-28 00:01:50
+ * @ Modified time: 2022-10-08 01:59:47
  * @ Description:
  -->
 
@@ -10,33 +10,37 @@
 	<div class="slidebar-root flex">
 		<el-scrollbar class="scrollbar-wrapper">
 			<el-menu
-				:default-active="2"
+				:default-active="`/home`"
 				:collapse="isCollapse"
 				:unique-opened="true"
 				:collapse-transition="false"
 				mode="vertical"
+				@open="handleOpen"
+				@close="handleClose"
+				@select="handleSelect"
 			>
-				<SlideItem
+				<slide-item
 					v-for="(route, index) in routes"
 					:index="index"
 					:key="route.path"
 					:item="route"
 					:base-path="route.path"
-				></SlideItem>
+				></slide-item>
 			</el-menu>
 		</el-scrollbar>
 	</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import Logger from '@/global/Logger';
+import { defineComponent, ref } from 'vue';
 import SlideItem from './SlideItem.vue';
 
 export default defineComponent({
 	name: 'SlideBar',
 	data() {
 		return {
-			isCollapse: false,
+			isCollapse: ref(false),
 		};
 	},
 	computed: {
@@ -45,6 +49,17 @@ export default defineComponent({
 		},
 	},
 	components: { SlideItem },
+	methods: {
+		handleOpen(key: string, keyPath: string[]) {
+			Logger.debug('handleOpen', key, keyPath);
+		},
+		handleClose(key: string, keyPath: string[]) {
+			Logger.debug('handleClose', key, keyPath);
+		},
+		handleSelect(key: string, keyPath: string[]) {
+			Logger.debug('handleSelect', key, keyPath);
+		},
+	},
 });
 </script>
 

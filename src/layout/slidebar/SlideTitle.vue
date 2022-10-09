@@ -16,7 +16,7 @@ export default defineComponent({
 		},
 	},
 	render() {
-		Logger.debug('TAG', this.icon, this.title);
+		// Logger.debug('TAG', this.icon, this.title);
 		const vnodes: VNode[] = [];
 
 		let iconNode: VNode, titleNode: VNode;
