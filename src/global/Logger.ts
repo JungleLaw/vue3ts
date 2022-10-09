@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-10-02 04:21:05
+ * @ Modified time: 2022-10-09 15:18:31
  * @ Description:
  */
 const style = (color: string) => {
@@ -29,19 +29,19 @@ class Logger {
 	public static log(msg: any, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Default, 'Log', msg, ...optionalParams);
 	}
-	public static info(tag: string = 'Log info', msg: any, ...optionalParams: any[]) {
+	public static info(tag: string = 'Log info', msg: any = null, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Info, tag, msg, ...optionalParams);
 	}
-	public static warn(tag: string = 'Log warn', msg: any, ...optionalParams: any[]) {
+	public static warn(tag: string = 'Log warn', msg: any = null, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Warn, tag, msg, ...optionalParams);
 	}
-	public static error(tag: string = 'Log error', msg: any, ...optionalParams: any[]) {
+	public static error(tag: string = 'Log error', msg: any = null, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Error, tag, msg, ...optionalParams);
 	}
-	public static debug(tag: string = 'Log debug', msg: any, ...optionalParams: any[]) {
+	public static debug(tag: string = 'Log debug', msg: any = null, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Debug, tag, msg, ...optionalParams);
 	}
-	public static track(tag: string = 'Log track', msg: any, ...optionalParams: any[]) {
+	public static track(tag: string = 'Log track', msg: any = null, ...optionalParams: any[]) {
 		Logger.print(Logger.Type.Track, tag, msg, ...optionalParams);
 	}
 
@@ -56,7 +56,9 @@ class Logger {
 		Track: { value: 5, color: '#3B1946' },
 	};
 	private static print(type: object, tag: string, msg: any, ...optionalParams: any[]) {
-		if (Logger.drop) return;
+		if (Logger.drop) {
+			return;
+		}
 		let fn: Function;
 		switch (type) {
 			case Logger.Type.Info:
@@ -96,20 +98,22 @@ class Logger {
 		// tslint:disable-next-line:no-console
 		console.group(`%c${tag}%c %s`, style(type['color']), '', `@ ${line}`);
 		// console.group(`%c${tag}%c @ %s`, style(type['color']), '', getSourceLink());
-		if (typeof msg === 'string') {
-			// if (msg.includes('%')) {
-			// 	fn(msg, ...optionalParams);
-			// } else {
-			fn(msg, ...optionalParams);
-			// }
-		} else {
-			fn(
-				`%c${msg}%c %o`,
-				`text-align: start;font-size: 14px;color:${type['color']};`,
-				'',
-				msg,
-				...optionalParams,
-			);
+		if (msg) {
+			if (typeof msg === 'string') {
+				// if (msg.includes('%')) {
+				// 	fn(msg, ...optionalParams);
+				// } else {
+				fn(msg, ...optionalParams);
+				// }
+			} else {
+				fn(
+					`%c${msg}%c %o`,
+					`text-align: start;font-size: 14px;color:${type['color']};`,
+					'',
+					msg,
+					...optionalParams,
+				);
+			}
 		}
 		// tslint:disable-next-line:no-console
 		console.groupEnd();

@@ -1,5 +1,5 @@
 import Logger from '@/global/Logger';
-import { defineComponent, reactive, ref } from 'vue';
+import { defineComponent, Ref, ref } from 'vue';
 export default defineComponent({
 	name: 'TsxIndex',
 	data() {
@@ -12,10 +12,10 @@ export default defineComponent({
 		// props, ctx;
 		Logger.debug('props', props);
 		Logger.debug('ctx', ctx);
-		Logger.debug('setup', '');
-		let bool = ref(false);
-		const executeClick = () => {
-			Logger.debug('click', '');
+		Logger.debug('setup');
+		const bool: Ref<boolean> = ref(false);
+		const executeClick: VoidFunction = () => {
+			Logger.debug('click');
 			bool.value = !bool.value;
 		};
 		Logger.debug('bool', bool);
@@ -27,7 +27,7 @@ export default defineComponent({
 	},
 	methods: {
 		executeClick() {
-			Logger.debug('click', '');
+			Logger.debug('click');
 		},
 	},
 });

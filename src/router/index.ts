@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-10-09 01:56:10
+ * @ Modified time: 2022-10-09 15:37:10
  * @ Description:
  *
  */
@@ -68,7 +68,7 @@ const basicRoutes: RouterItem[] = [
 				name: 'DashboardIndex',
 				component: () => import('../views/demo/Dashboard.vue'),
 				visible: true,
-				meta: { title: 'Dashboard', icon: 'dashboard' },
+				meta: { title: 'Dashboard1', icon: 'dashboard1' },
 			},
 			{
 				path: 'index2',
@@ -110,6 +110,13 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/tsx/Index'),
 				visible: true,
 				meta: { title: 'Index', icon: 'index' },
+			},
+			{
+				path: 'test',
+				name: 'Test',
+				component: () => import('../views/tsx/Test'),
+				visible: true,
+				meta: { title: 'Test', icon: 'test' },
 			},
 		],
 	},
