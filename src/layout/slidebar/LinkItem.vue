@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-25 15:35:20
  * @ Modified by: Captain
- * @ Modified time: 2022-10-08 02:01:19
+ * @ Modified time: 2022-10-10 18:21:13
  * @ Description:
  -->
 
@@ -15,6 +15,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { isUrl } from '@/commons/validator';
+import Logger from '@/global/Logger';
 
 export default defineComponent({
 	name: 'LinkItem',
@@ -37,9 +38,11 @@ export default defineComponent({
 	},
 	// emits: {
 	// 	select: val => {
+	// 		Logger.debug('TAG', 'emits select');
 	// 		return true;
 	// 	},
 	// 	open: val => {
+	// 		Logger.debug('TAG', 'emits open');
 	// 		return true;
 	// 	},
 	// },

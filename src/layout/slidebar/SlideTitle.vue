@@ -19,7 +19,8 @@ export default defineComponent({
 		// Logger.debug('TAG', this.icon, this.title);
 		const vnodes: VNode[] = [];
 
-		let iconNode: VNode, titleNode: VNode;
+		let iconNode: VNode;
+		let titleNode: VNode;
 		if (this.icon) {
 			if (this.icon.includes('el-icon')) {
 				// vnodes.push(<i class={ [icon, 'sub-el-icon']} />);

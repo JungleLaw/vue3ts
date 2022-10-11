@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 10:23:08
  * @ Modified by: Captain
- * @ Modified time: 2022-10-08 01:59:47
+ * @ Modified time: 2022-10-10 18:21:04
  * @ Description:
  -->
 
@@ -13,12 +13,14 @@
 				:default-active="`/home`"
 				:collapse="isCollapse"
 				:unique-opened="true"
-				:collapse-transition="false"
+				:collapse-transition="true"
+				:menu-trigger="'click'"
+				:router="true"
 				mode="vertical"
-				@open="handleOpen"
-				@close="handleClose"
-				@select="handleSelect"
 			>
+				<!-- @open="handleOpen"
+				@close="handleClose"
+				@select="handleSelect" -->
 				<slide-item
 					v-for="(route, index) in routes"
 					:index="index"
@@ -49,6 +51,16 @@ export default defineComponent({
 		},
 	},
 	components: { SlideItem },
+	emits: {
+		select: val => {
+			Logger.debug('TAG', 'emits select');
+			return true;
+		},
+		open: val => {
+			Logger.debug('TAG', 'emits open');
+			return true;
+		},
+	},
 	methods: {
 		handleOpen(key: string, keyPath: string[]) {
 			Logger.debug('handleOpen', key, keyPath);

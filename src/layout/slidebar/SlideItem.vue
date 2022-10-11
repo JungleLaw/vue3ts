@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-25 15:35:00
  * @ Modified by: Captain
- * @ Modified time: 2022-10-08 02:02:27
+ * @ Modified time: 2022-10-10 18:11:32
  * @ Description:
  -->
 
@@ -25,7 +25,7 @@
 				</el-menu-item>
 			</link-item>
 		</template>
-		<el-sub-menu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
+		<el-sub-menu v-else ref="subMenu" :index="resolvePath(item.path)">
 			<template #title>
 				<slide-title
 					v-if="item.meta"
@@ -53,6 +53,7 @@ import path from 'path-browserify';
 import { defineComponent } from 'vue';
 import SlideTitle from './SlideTitle.vue';
 import LinkItem from './LinkItem.vue';
+import Logger from '@/global/Logger';
 
 export default defineComponent({
 	name: 'SlideItem',
@@ -77,9 +78,11 @@ export default defineComponent({
 	},
 	// emits: {
 	// 	select: val => {
+	// 		Logger.debug('TAG', 'emits select');
 	// 		return true;
 	// 	},
 	// 	open: val => {
+	// 		Logger.debug('TAG', 'emits open');
 	// 		return true;
 	// 	},
 	// },
