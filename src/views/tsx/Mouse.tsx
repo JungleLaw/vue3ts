@@ -5,9 +5,7 @@ export default defineComponent({
 	setup(props, context) {
 		return () => (
 			<>
-				<div>
-					<MouseComponent></MouseComponent>
-				</div>
+				<MouseComponent></MouseComponent>
 			</>
 		);
 	},

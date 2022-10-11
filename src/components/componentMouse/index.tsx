@@ -1,5 +1,6 @@
 import Logger from '@/global/Logger';
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
+import style from './style.scss';
 
 export default defineComponent({
 	setup(props, context) {
@@ -10,21 +11,23 @@ export default defineComponent({
 			x.value = e.offsetX;
 			y.value = e.offsetY;
 		};
-
+		let root;
 		onMounted(() => {
 			Logger.debug('onMounted');
-			window.addEventListener('mousemove', update);
+			root = document.getElementsByClassName('mouse-root');
+			Logger.debug('target', root[0]);
+			root[0].addEventListener('mousemove', update);
 		});
 		onUnmounted(() => {
 			Logger.debug('onUnmounted');
-			window.removeEventListener('mousemove', update);
+			root[0].removeEventListener('mousemove', update);
 		});
 		return () => (
-			<>
-				<div>
+			<div className="mouse-root">
+				<span>
 					Mouse position is at: {x.value}, {y.value}
-				</div>
-			</>
+				</span>
+			</div>
 		);
 	},
 });
