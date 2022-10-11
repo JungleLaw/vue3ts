@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-10-09 15:18:31
+ * @ Modified time: 2022-10-11 17:14:19
  * @ Description:
  */
 const style = (color: string) => {
@@ -107,7 +107,7 @@ class Logger {
 				// }
 			} else {
 				fn(
-					`%c${msg}%c %o`,
+					`%c${typeof msg}%c %o`,
 					`text-align: start;font-size: 14px;color:${type['color']};`,
 					'',
 					msg,
