@@ -7,19 +7,19 @@ export default defineComponent({
 	emits: {
 		update: val => {
 			Logger.debug('source update');
-			return false;
+			return true;
 		},
 		change: val => {
 			Logger.debug('source change');
-			return false;
+			return true;
 		},
 	},
 	setup(props, context) {
 		const emitUpdate = () => {
-			context.emit('update', '');
+			context.emit('update', '123');
 		};
 		const emitChange = () => {
-			context.emit('change', '');
+			context.emit('change', 'abc');
 		};
 		return () => (
 			<>

@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-10-11 17:14:19
+ * @ Modified time: 2022-10-12 18:50:52
  * @ Description:
  */
 const style = (color: string) => {
@@ -98,7 +98,7 @@ class Logger {
 		// tslint:disable-next-line:no-console
 		console.group(`%c${tag}%c %s`, style(type['color']), '', `@ ${line}`);
 		// console.group(`%c${tag}%c @ %s`, style(type['color']), '', getSourceLink());
-		if (msg) {
+		if (msg || typeof msg === 'boolean') {
 			if (typeof msg === 'string') {
 				// if (msg.includes('%')) {
 				// 	fn(msg, ...optionalParams);
