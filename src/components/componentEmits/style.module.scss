@@ -1,0 +1,14 @@
+.emits-root {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+}
+.emits-txt {
+	font-size: 20px;
+}
+.emits-btn {
+	width: 80px;
+	height: 30px;
+	text-align: center;
+}

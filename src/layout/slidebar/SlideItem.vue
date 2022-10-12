@@ -76,16 +76,6 @@ export default defineComponent({
 			default: '',
 		},
 	},
-	// emits: {
-	// 	select: val => {
-	// 		Logger.debug('TAG', 'emits select');
-	// 		return true;
-	// 	},
-	// 	open: val => {
-	// 		Logger.debug('TAG', 'emits open');
-	// 		return true;
-	// 	},
-	// },
 	data() {
 		return {
 			visibleRouter: {

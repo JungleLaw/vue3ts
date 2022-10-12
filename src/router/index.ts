@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-10-11 17:39:11
+ * @ Modified time: 2022-10-12 16:07:51
  * @ Description:
  *
  */
@@ -124,6 +124,20 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/tsx/Mouse'),
 				visible: true,
 				meta: { title: 'Mouse', icon: 'mouse' },
+			},
+			{
+				path: 'emits',
+				name: 'Emits',
+				component: () => import('../views/tsx/Emits'),
+				visible: true,
+				meta: { title: 'Emits', icon: 'emits' },
+			},
+			{
+				path: 'computed',
+				name: 'Computed',
+				component: () => import('../views/tsx/Computed'),
+				visible: true,
+				meta: { title: 'Computed', icon: 'computed' },
 			},
 		],
 	},

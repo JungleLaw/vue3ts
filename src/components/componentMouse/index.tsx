@@ -1,6 +1,6 @@
 import Logger from '@/global/Logger';
-import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
-import style from './style.scss';
+import { defineComponent, onBeforeUnmount, onMounted, onUnmounted, ref } from 'vue';
+import style from './style.module.scss';
 
 export default defineComponent({
 	setup(props, context) {
@@ -14,16 +14,17 @@ export default defineComponent({
 		let root;
 		onMounted(() => {
 			Logger.debug('onMounted');
-			root = document.getElementsByClassName('mouse-root');
+			root = document.getElementsByClassName(style['mouse-root']);
 			Logger.debug('target', root[0]);
 			root[0].addEventListener('mousemove', update);
 		});
-		onUnmounted(() => {
+		onBeforeUnmount(() => {
 			Logger.debug('onUnmounted');
 			root[0].removeEventListener('mousemove', update);
 		});
 		return () => (
-			<div className="mouse-root">
+			// <div className="mouse-root">
+			<div class={`${style['mouse-root']}`}>
 				<span>
 					Mouse position is at: {x.value}, {y.value}
 				</span>

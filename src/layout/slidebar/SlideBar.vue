@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 10:23:08
  * @ Modified by: Captain
- * @ Modified time: 2022-10-10 18:21:04
+ * @ Modified time: 2022-10-12 15:29:01
  * @ Description:
  -->
 
@@ -51,16 +51,6 @@ export default defineComponent({
 		},
 	},
 	components: { SlideItem },
-	emits: {
-		select: val => {
-			Logger.debug('TAG', 'emits select');
-			return true;
-		},
-		open: val => {
-			Logger.debug('TAG', 'emits open');
-			return true;
-		},
-	},
 	methods: {
 		handleOpen(key: string, keyPath: string[]) {
 			Logger.debug('handleOpen', key, keyPath);

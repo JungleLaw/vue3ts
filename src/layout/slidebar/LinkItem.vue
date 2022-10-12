@@ -36,16 +36,6 @@ export default defineComponent({
 			return 'router-link';
 		},
 	},
-	// emits: {
-	// 	select: val => {
-	// 		Logger.debug('TAG', 'emits select');
-	// 		return true;
-	// 	},
-	// 	open: val => {
-	// 		Logger.debug('TAG', 'emits open');
-	// 		return true;
-	// 	},
-	// },
 	methods: {
 		linkProps(to) {
 			if (this.isExternal) {
