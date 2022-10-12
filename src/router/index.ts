@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-10-12 16:07:51
+ * @ Modified time: 2022-10-13 02:00:30
  * @ Description:
  *
  */
@@ -138,6 +138,20 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/tsx/Computed'),
 				visible: true,
 				meta: { title: 'Computed', icon: 'computed' },
+			},
+			{
+				path: 'watch',
+				name: 'Watch',
+				component: () => import('../views/tsx/Watch'),
+				visible: true,
+				meta: { title: 'Watch', icon: 'watch' },
+			},
+			{
+				path: 'props',
+				name: 'Props',
+				component: () => import('../views/tsx/Props'),
+				visible: true,
+				meta: { title: 'Props', icon: 'props' },
 			},
 		],
 	},
