@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-10-13 02:00:30
+ * @ Modified time: 2022-10-14 01:17:53
  * @ Description:
  *
  */
@@ -152,6 +152,13 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/tsx/Props'),
 				visible: true,
 				meta: { title: 'Props', icon: 'props' },
+			},
+			{
+				path: 'setup',
+				name: 'Setup',
+				component: () => import('../views/tsx/Setup'),
+				visible: true,
+				meta: { title: 'Setup', icon: 'setup' },
 			},
 		],
 	},
