@@ -1,13 +1,14 @@
 import { defineComponent, reactive, ref } from 'vue';
 import Setup from '@/components/setupComponent';
 import Logger from '@/global/Logger';
+
 export default defineComponent({
 	setup(props, context) {
 		const index = ref(0);
 		const change = () => {
 			index.value++;
 		};
-		let element = () => {
+		let element: Function = (): JSX.Element => {
 			switch (index.value % 5) {
 				case 0:
 					return <div>aaa</div>;
@@ -26,6 +27,16 @@ export default defineComponent({
 			// Logger.debug('event', event);
 			Logger.debug('echo', msg);
 		};
+		const counter = ref(0);
+		let counterTask;
+		const startCounter: VoidFunction = () => {
+			counterTask = setInterval(() => {
+				counter.value++;
+			}, 1000);
+		};
+		const stopCounter: VoidFunction = () => {
+			clearInterval(counterTask);
+		};
 		return () => (
 			<>
 				<Setup></Setup>
@@ -41,6 +52,9 @@ export default defineComponent({
 					);
 				})}
 				{element()}
+				<div>{counter.value}</div>
+				<button onclick={startCounter}>start</button>
+				<button onclick={stopCounter}>stop</button>
 			</>
 		);
 	},
