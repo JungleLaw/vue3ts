@@ -2,9 +2,14 @@
 	height: 100%;
 	display: flex;
 	flex-flow: row nowrap;
-	.left_root {
+	.left_root_red {
 		width: 100%;
 		color: red;
+		flex: 1;
+	}
+	.left_root_green {
+		width: 100%;
+		color: green;
 		flex: 1;
 	}
 	.right_root {

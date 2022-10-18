@@ -11,7 +11,6 @@ export default defineComponent({
 		item: { type: Object, require: true, default: (): Item | null => null },
 	},
 	setup(props, context) {
-		Logger.log(props.item);
 		return () => (
 			<>
 				<div>

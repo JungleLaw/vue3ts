@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-10-17 01:15:25
+ * @ Modified time: 2022-10-19 02:03:39
  * @ Description:
  *
  */
@@ -166,6 +166,27 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/tsx/Style'),
 				visible: true,
 				meta: { title: 'Style', icon: 'style' },
+			},
+			{
+				path: 'event',
+				name: 'Event',
+				component: () => import('../views/tsx/Event'),
+				visible: true,
+				meta: { title: 'Event', icon: 'event' },
+			},
+			{
+				path: 'tevent',
+				name: 'TEvent',
+				component: () => import('../views/tsx/Event.vue'),
+				visible: true,
+				meta: { title: 'TEvent', icon: 'tevent' },
+			},
+			{
+				path: 'lifecirle',
+				name: 'LifeCirle',
+				component: () => import('../views/tsx/LifeCircle'),
+				visible: true,
+				meta: { title: 'LifeCircle', icon: 'lifecirle' },
 			},
 		],
 	},
