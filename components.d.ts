@@ -20,5 +20,6 @@ declare module '@vue/runtime-core' {
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Vslot: typeof import('./src/components/slotComponent/vslot.vue')['default']
   }
 }
