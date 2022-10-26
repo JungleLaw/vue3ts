@@ -22,7 +22,7 @@
 				<div>props:{{ f }}</div>
 			</template>
 			<template #default="{ b }">
-				<div>default</div>
+				<div>ddefault</div>
 				<div>props:{{ b }}</div>
 			</template>
 		</VSlot>

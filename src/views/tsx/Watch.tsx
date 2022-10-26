@@ -2,41 +2,52 @@
  * @ Author: Captain
  * @ Create Time: 2022-10-13 01:07:09
  * @ Modified by: Captain
- * @ Modified time: 2022-10-13 01:36:58
+ * @ Modified time: 2022-10-26 16:35:45
  * @ Description:
  */
 
 import Logger from '@/global/Logger';
-import { defineComponent, reactive, ref, watch } from 'vue';
+import { defineComponent, reactive, ref, watch, watchEffect } from 'vue';
 
 export default defineComponent({
 	setup(props, context) {
 		const test = ref('abc');
 		const counter = reactive({ num: 1 });
 		const click = () => {
-			test.value = 'bbc';
+			test.value = 'bbc' + counter.num;
 		};
 		const count = () => {
 			counter.num++;
 		};
 		// ref
-		watch(test, (nv, ov) => {
-			Logger.debug('handler test', nv, ov);
-		});
+		// watch(test, (nv, ov) => {
+		// 	Logger.debug('handler test', nv, ov);
+		// });
 		// reactive
-		watch(
-			() => counter.num,
-			(nv, ov) => {
-				Logger.debug('handler counter', nv, ov);
-			},
-			{ deep: true, immediate: true },
-		);
+		// watch(
+		// 	() => counter.num,
+		// 	(nv, ov) => {
+		// 		Logger.debug('handler counter', nv, ov);
+		// 	},
+		// 	{ deep: true, immediate: true },
+		// );
+		// watchEffect
+		watchEffect(() => {
+			// Logger.debug('watchEffect');
+			Logger.debug('test', test.value);
+			// Logger.debug('count', counter.num);
+		});
+		watchEffect(() => {
+			// Logger.debug('watchEffect');
+			// Logger.debug('test', test.value);
+			Logger.debug('count', counter.num);
+		});
 		return () => (
 			<>
 				<div>
-					<div>{test.value}</div>
+					<div>ref =&gt; {test.value}</div>
 					<button onclick={click}>btn</button>
-					<div>{counter.num}</div>
+					<div>reactive =&gt; {counter.num}</div>
 					<button onclick={count}>count</button>
 				</div>
 			</>

@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 15:55:25
  * @ Modified by: Captain
- * @ Modified time: 2022-10-08 01:58:22
+ * @ Modified time: 2022-10-26 16:00:47
  * @ Description:
  */
 
@@ -10,7 +10,7 @@ import { App, reactive } from 'vue';
 import Logger from '@/global/Logger';
 import Theme from '@/global/Theme';
 import Settings from '@/global/Settings';
-
+import focus from '@/directives/focus';
 export default class Initialization {
 	public static setup(app: App) {
 		// process.env.VITE_LOGGER_DEBUG;
@@ -32,6 +32,7 @@ export default class Initialization {
 			Logger.error('app error', error);
 		};
 		app.config.globalProperties.$settings = reactive(Settings);
+		app.directive('focus', focus);
 	}
 	private constructor() {
 		throw new Error('cannot excute private constructor');

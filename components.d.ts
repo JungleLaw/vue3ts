@@ -9,7 +9,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ComponentA: typeof import('./src/components/componentA/index.vue')['default']
     ComponentB: typeof import('./src/components/componentB/index.vue')['default']
-    ComponentMouse: typeof import('./src/components/componentMouse/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']

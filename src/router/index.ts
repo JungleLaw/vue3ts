@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-10-24 02:34:59
+ * @ Modified time: 2022-10-25 14:06:57
  * @ Description:
  *
  */
@@ -208,6 +208,20 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/tsx/VSlots.vue'),
 				visible: true,
 				meta: { title: 'VSlots', icon: 'vslots' },
+			},
+			{
+				path: 'attrs',
+				name: 'Attrs',
+				component: () => import('../views/tsx/Attrs'),
+				visible: true,
+				meta: { title: 'Attrs', icon: 'attrs' },
+			},
+			{
+				path: 'pi',
+				name: 'Provide&Inject',
+				component: () => import('../views/tsx/Pi'),
+				visible: true,
+				meta: { title: 'Provide&Inject', icon: 'pi' },
 			},
 		],
 	},

@@ -26,14 +26,14 @@ export default defineComponent({
 			Logger.debug('echo', msg);
 		};
 		onMounted(() => {
-			Logger.debug('onMounted', num.value);
+			Logger.debug('onMounted', num);
 		});
 		return () => (
 			<>
 				<ComponentA></ComponentA>
 				<ComponentB></ComponentB>
 				<button onclick={toggle}>toggle</button>
-				<div v-show={visible.value}>{text.value}</div>
+				<div v-show={visible.value}>text = {text.value}</div>
 				<div>num:{num.value}</div>
 				{list.map(item => {
 					return (
