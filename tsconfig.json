@@ -17,7 +17,7 @@
 		"jsx": "preserve",
 		"importHelpers": true,
 		"moduleResolution": "node",
-		"allowJs": false,
+		"allowJs": true,
 		// 是否检测js代码是否符合规范
 		"checkJs": false,
 		// 不生成编译后的文件
@@ -57,6 +57,7 @@
 	"include": [
 		// "src/**/*",
 		"src/**/*.ts",
+		"src/**/*.js",
 		"src/**/*.tsx",
 		"src/**/*.vue",
 		"tests/**/*.ts",

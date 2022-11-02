@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-10-25 14:06:57
+ * @ Modified time: 2022-11-02 15:41:41
  * @ Description:
  *
  */
@@ -76,6 +76,48 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/demo/Dashboard2.vue'),
 				visible: true,
 				meta: { title: 'Dashboard2', icon: 'dashboard2' },
+			},
+			{
+				path: 'protoType',
+				name: 'ProtoType',
+				component: () => import('../views/demo/ProtoType.vue'),
+				visible: true,
+				meta: { title: 'ProtoType', icon: 'protoType' },
+			},
+			{
+				path: 'backgroundattach',
+				name: 'BackgroundAttach',
+				component: () => import('../views/demo/BackgroundAttach.vue'),
+				visible: true,
+				meta: { title: 'BackgroundAttach', icon: 'backgroundattach' },
+			},
+			{
+				path: 'grid',
+				name: 'Grid',
+				component: () => import('../views/demo/Grid.vue'),
+				visible: true,
+				meta: { title: 'Grid', icon: 'grid' },
+			},
+			{
+				path: 'float',
+				name: 'Float',
+				component: () => import('../views/demo/Float.vue'),
+				visible: true,
+				meta: { title: 'Float', icon: 'float' },
+			},
+			{
+				path: 'flex',
+				name: 'Flex',
+				component: () => import('../views/demo/Flex.vue'),
+				visible: true,
+				meta: { title: 'Flex', icon: 'flex' },
+			},
+			{
+				path: 'media',
+				name: 'Media',
+				component: () => import('../views/demo/Media.vue'),
+				visible: true,
+				meta: { title: 'Media', icon: 'media' },
 			},
 		],
 	},

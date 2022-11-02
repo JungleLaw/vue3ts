@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-09-18 04:04:46
+ * @ Modified time: 2022-11-02 18:16:58
  * @ Description:
  */
 
@@ -81,7 +81,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			},
 		},
 		esbuild: {
-			pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : [],
+			pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger', 'Logger'] : [],
 		},
 		build: {
 			target: 'es2015',

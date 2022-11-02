@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, h } from 'vue';
 import PropsComponent from '@/components/propsComponent';
 export default defineComponent({
 	setup(props, context) {

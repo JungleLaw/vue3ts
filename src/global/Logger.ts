@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-10-12 18:50:52
+ * @ Modified time: 2022-11-02 18:14:23
  * @ Description:
  */
 const style = (color: string) => {
@@ -11,6 +11,7 @@ const style = (color: string) => {
 const getStackTrace = () => {
 	const obj = {};
 	Error.captureStackTrace(obj, getStackTrace);
+	// obj.stack = Error().stack;
 	return obj['stack'];
 };
 

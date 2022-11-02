@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="event-root">
 		<button @click.once="click">Click Once</button>
 	</div>
 </template>
@@ -21,4 +21,8 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.event-root {
+	display: flex;
+}
+</style>
