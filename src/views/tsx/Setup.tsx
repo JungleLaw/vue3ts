@@ -1,6 +1,5 @@
 import { defineComponent, reactive, ref } from 'vue';
 import Setup from '@/components/setupComponent';
-import Logger from '@/global/Logger';
 
 export default defineComponent({
 	setup(props, context) {
@@ -25,7 +24,7 @@ export default defineComponent({
 		const list = reactive([1, 2, 3]);
 		const echo = (event, msg) => {
 			// Logger.debug('event', event);
-			Logger.debug('echo', msg);
+			console.debug('echo', msg);
 		};
 		const counter = ref(0);
 		let counterTask;

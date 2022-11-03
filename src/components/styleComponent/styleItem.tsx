@@ -1,4 +1,3 @@
-import Logger from '@/global/Logger';
 import { defineComponent } from 'vue';
 
 interface Item {

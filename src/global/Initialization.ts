@@ -2,12 +2,11 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 15:55:25
  * @ Modified by: Captain
- * @ Modified time: 2022-10-26 16:00:47
+ * @ Modified time: 2022-11-03 17:01:20
  * @ Description:
  */
 
 import { App, reactive } from 'vue';
-import Logger from '@/global/Logger';
 import Theme from '@/global/Theme';
 import Settings from '@/global/Settings';
 import focus from '@/directives/focus';
@@ -29,7 +28,7 @@ export default class Initialization {
 		// Logger.track('Tag', window.document);
 		Theme.setupTheme();
 		app.config.errorHandler = error => {
-			Logger.error('app error', error);
+			console.error('app error', error);
 		};
 		app.config.globalProperties.$settings = reactive(Settings);
 		app.directive('focus', focus);

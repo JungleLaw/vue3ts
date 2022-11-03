@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts">
-import Logger from '@/global/Logger';
 import { Sub, Test } from './obj.js';
 
 export default {
@@ -18,21 +17,21 @@ export default {
 		};
 	},
 	mounted() {
-		Logger.debug('test', this.test);
+		console.debug('test', this.test);
 		this.test.run();
-		Logger.debug('obj', this.obj);
-		Logger.debug('obj', this.obj.prototype);
+		console.debug('obj', this.obj);
+		console.debug('obj', this.obj.prototype);
 		// this.obj.prototype = { c: 3, d: 4 };
 		// this.obj.prototype.c = 3;
 		// this.obj.prototype.d = 4;
-		Logger.debug('obj', this.obj);
-		Logger.debug('array', this.array);
+		console.debug('obj', this.obj);
+		console.debug('array', this.array);
 		this.func = this.fn;
-		Logger.debug('func', this.fn);
+		console.debug('func', this.fn);
 	},
 	methods: {
 		fn() {
-			Logger.debug('func: this is a func');
+			console.debug('func: this is a func');
 		},
 	},
 };

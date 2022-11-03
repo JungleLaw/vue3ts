@@ -53,7 +53,6 @@ import path from 'path-browserify';
 import { defineComponent } from 'vue';
 import SlideTitle from './SlideTitle.vue';
 import LinkItem from './LinkItem.vue';
-import Logger from '@/global/Logger';
 
 export default defineComponent({
 	name: 'SlideItem',

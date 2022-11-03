@@ -1,10 +1,8 @@
-import Logger from '@/global/Logger';
 import { defineComponent, inject } from 'vue';
 import Message from './msg';
 export default defineComponent({
 	setup(props, context) {
 		const msg: Message = inject('msg') as Message;
-		Logger.debug('inject', msg);
 		return () => (
 			<>
 				<div>subchild</div>

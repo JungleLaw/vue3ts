@@ -6,7 +6,6 @@
  * @ Description:
  */
 
-import Logger from '@/global/Logger';
 import { defineComponent, reactive, ref, watch, watchEffect } from 'vue';
 
 export default defineComponent({
@@ -34,13 +33,13 @@ export default defineComponent({
 		// watchEffect
 		watchEffect(() => {
 			// Logger.debug('watchEffect');
-			Logger.debug('test', test.value);
+			console.debug('test', test.value);
 			// Logger.debug('count', counter.num);
 		});
 		watchEffect(() => {
 			// Logger.debug('watchEffect');
 			// Logger.debug('test', test.value);
-			Logger.debug('count', counter.num);
+			console.debug('count', counter.num);
 		});
 		return () => (
 			<>

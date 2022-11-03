@@ -1,4 +1,3 @@
-import Logger from '@/global/Logger';
 import {
 	defineComponent,
 	onActivated,
@@ -11,29 +10,29 @@ import {
 
 export default defineComponent({
 	mounted() {
-		Logger.log('onMounted');
+		console.log('onMounted');
 	},
 	created() {
-		Logger.log('created');
+		console.log('created');
 	},
 	setup(props, context) {
 		onBeforeUnmount(() => {
-			Logger.log('setup onBeforeUnmount');
+			console.log('setup onBeforeUnmount');
 		});
 		onUnmounted(() => {
-			Logger.log('setup onUnmounted');
+			console.log('setup onUnmounted');
 		});
 		onActivated(() => {
-			Logger.log('setup onActivated');
+			console.log('setup onActivated');
 		});
 		onBeforeMount(() => {
-			Logger.log('setup onBeforeMount');
+			console.log('setup onBeforeMount');
 		});
 		onMounted(() => {
-			Logger.log('setup onMounted');
+			console.log('setup onMounted');
 		});
 		onRenderTracked(() => {
-			Logger.log('setup onRenderTracked');
+			console.log('setup onRenderTracked');
 		});
 		return () => (
 			<>

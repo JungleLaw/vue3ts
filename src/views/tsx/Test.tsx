@@ -1,4 +1,3 @@
-import Logger from '@/global/Logger';
 import { defineComponent, ref, reactive, onUnmounted, onMounted } from 'vue';
 import ComponentA from '@/components/componentA/index.vue';
 import ComponentB from '@/components/componentB/index.vue';
@@ -11,8 +10,8 @@ export default defineComponent({
 		},
 	},
 	setup(props, context) {
-		Logger.debug('context', context);
-		Logger.debug('props', props);
+		console.debug('context', context);
+		console.debug('props', props);
 		const text = ref<string>(props.pp);
 		const visible = ref<boolean>(true);
 		const num = ref<number>(1);
@@ -23,10 +22,10 @@ export default defineComponent({
 		};
 		const echo = (event, msg) => {
 			// Logger.debug('event', event);
-			Logger.debug('echo', msg);
+			console.debug('echo', msg);
 		};
 		onMounted(() => {
-			Logger.debug('onMounted', num);
+			console.debug('onMounted', num);
 		});
 		return () => (
 			<>

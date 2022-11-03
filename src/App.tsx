@@ -8,7 +8,6 @@
 
 import { RouterView } from 'vue-router';
 import { defineComponent } from 'vue';
-import Logger from './global/Logger';
 
 export default defineComponent({
 	name: 'App',
@@ -16,7 +15,6 @@ export default defineComponent({
 		RouterView,
 	},
 	setup(props) {
-		Logger.info('TAG', props);
 		return () => (
 			<>
 				<div className="app-root">

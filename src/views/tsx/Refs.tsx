@@ -1,12 +1,11 @@
 import { defineComponent, getCurrentInstance } from 'vue';
 import RefComponent from '@/components/refComponent';
-import Logger from '@/global/Logger';
 
 export default defineComponent({
 	setup(props, context) {
-		Logger.debug('props', props);
-		Logger.debug('props', props['Proxy']);
-		Logger.debug('context', context);
+		console.debug('props', props);
+		console.debug('props', props['Proxy']);
+		console.debug('context', context);
 		const { proxy } = getCurrentInstance();
 		const click = () => {
 			proxy.$refs.rc.out();

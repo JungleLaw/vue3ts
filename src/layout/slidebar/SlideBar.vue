@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 10:23:08
  * @ Modified by: Captain
- * @ Modified time: 2022-10-12 18:55:43
+ * @ Modified time: 2022-11-03 17:02:44
  * @ Description:
  -->
 
@@ -34,7 +34,6 @@
 </template>
 
 <script lang="ts">
-import Logger from '@/global/Logger';
 import { defineComponent, ref } from 'vue';
 import SlideItem from './SlideItem.vue';
 
@@ -53,13 +52,13 @@ export default defineComponent({
 	components: { SlideItem },
 	methods: {
 		handleOpen(key: string, keyPath: string[]) {
-			Logger.debug('handleOpen', key, keyPath);
+			console.debug('handleOpen', key, keyPath);
 		},
 		handleClose(key: string, keyPath: string[]) {
-			Logger.debug('handleClose', key, keyPath);
+			console.debug('handleClose', key, keyPath);
 		},
 		handleSelect(key: string, keyPath: string[]) {
-			Logger.debug('handleSelect', key, keyPath);
+			console.debug('handleSelect', key, keyPath);
 		},
 	},
 });

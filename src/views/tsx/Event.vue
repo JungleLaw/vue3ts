@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts">
-import Logger from '@/global/Logger';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -15,7 +14,7 @@ export default defineComponent({
 	},
 	methods: {
 		click() {
-			Logger.log('click');
+			console.log('click');
 		},
 	},
 });

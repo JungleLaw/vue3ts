@@ -19,7 +19,6 @@ import DarkLogo from '@/assets/layout/navibar/app-logo-dark.png';
 import LightLogo from '@/assets/layout/navibar/app-logo-light.png';
 import { ThemeEnum } from '@/global/Enum';
 
-import Logger from '@/global/Logger';
 import { defineComponent, reactive } from 'vue';
 
 export default defineComponent({

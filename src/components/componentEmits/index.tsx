@@ -1,4 +1,3 @@
-import Logger from '@/global/Logger';
 import { defineComponent } from 'vue';
 import style from './style.module.scss';
 
@@ -6,11 +5,9 @@ export default defineComponent({
 	name: 'ComponentEmits',
 	emits: {
 		update: val => {
-			Logger.debug('source update');
 			return true;
 		},
 		change: val => {
-			Logger.debug('source change');
 			return true;
 		},
 	},

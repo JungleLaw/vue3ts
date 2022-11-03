@@ -1,4 +1,3 @@
-import Logger from '@/global/Logger';
 import { defineComponent, onBeforeUnmount, onMounted, onUnmounted, ref } from 'vue';
 import style from './style.module.scss';
 
@@ -13,13 +12,10 @@ export default defineComponent({
 		};
 		let root;
 		onMounted(() => {
-			Logger.debug('onMounted');
 			root = document.getElementsByClassName(style['mouse-root']);
-			Logger.debug('target', root[0]);
 			root[0].addEventListener('mousemove', update);
 		});
 		onBeforeUnmount(() => {
-			Logger.debug('onUnmounted');
 			root[0].removeEventListener('mousemove', update);
 		});
 		return () => (

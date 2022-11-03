@@ -1,4 +1,3 @@
-import Logger from '@/global/Logger';
 import { defineComponent, reactive, ref } from 'vue';
 
 export default defineComponent({
@@ -13,7 +12,6 @@ export default defineComponent({
 		},
 	},
 	setup(props, context) {
-		Logger.debug('setup', props);
 		const p1p = ref(props.p1);
 		const p2p = reactive(props.p2);
 		return () => (

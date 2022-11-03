@@ -1,4 +1,3 @@
-import Logger from '@/global/Logger';
 import { defineComponent, Ref, ref } from 'vue';
 
 export default defineComponent({
@@ -9,7 +8,7 @@ export default defineComponent({
 	setup(props, ctx) {
 		const bool: Ref<boolean> = ref(false);
 		const executeClick: VoidFunction = () => {
-			Logger.debug('click');
+			console.debug('click');
 			bool.value = !bool.value;
 		};
 		return () => (

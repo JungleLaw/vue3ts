@@ -2,12 +2,11 @@
  * @ Author: Captain
  * @ Create Time: 2022-10-08 17:29:02
  * @ Modified by: Captain
- * @ Modified time: 2022-10-12 15:35:41
+ * @ Modified time: 2022-11-03 17:03:03
  * @ Description:
  -->
 
 <script lang="ts">
-import Logger from '@/global/Logger';
 import { defineComponent, h, VNode } from 'vue';
 
 export default defineComponent({

@@ -27,7 +27,6 @@ export default defineComponent({
 		return { Logo };
 	},
 	mounted() {
-		// Logger.log('abc', 'bbc', 'ddc');
 		// console.log('a');
 		// console.warn('b');
 		// console.error('c');

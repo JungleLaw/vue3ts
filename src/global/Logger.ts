@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-11-02 18:14:23
+ * @ Modified time: 2022-11-03 16:59:37
  * @ Description:
  */
 const style = (color: string) => {
@@ -10,9 +10,17 @@ const style = (color: string) => {
 };
 const getStackTrace = () => {
 	const obj = {};
-	Error.captureStackTrace(obj, getStackTrace);
+	if (Error.captureStackTrace) {
+		Error.captureStackTrace(obj, getStackTrace);
+		obj.v8 = true;
+	} else {
+		// erorr.printStack();
+		obj.stack = Error().stack;
+		// console.log('stack', obj.stack);
+		obj.v8 = false;
+	}
 	// obj.stack = Error().stack;
-	return obj['stack'];
+	return obj;
 };
 
 const getSourceLink = () => {
@@ -87,14 +95,26 @@ class Logger {
 				fn = console.log;
 		}
 
-		const stack = getStackTrace() || '';
+		const stack = getStackTrace() || null;
 		// console.log('stack', stack);
-		const matchResult = stack.match(/\(.*?\)/g) || [];
+		// ['stack'];
+		let matchResult = [];
+		if (stack) {
+			if (stack.v8) {
+				matchResult = stack['stack'].match(/\(.*?\)/g) || [];
+			} else {
+				matchResult = stack['stack'].match(/\@.*?\n/g) || [];
+			}
+		}
 		// console.log('matchResult', matchResult);
 		let line = matchResult[2] || '';
 		// console.log('line', line);
 		if (line) {
-			line = line.substring(1, line.length - 1);
+			if (stack.v8) {
+				line = line.substring(1, line.length - 1);
+			} else {
+				line = line.substring(1, line.length - 2);
+			}
 		}
 		// tslint:disable-next-line:no-console
 		console.group(`%c${tag}%c %s`, style(type['color']), '', `@ ${line}`);

@@ -1,13 +1,12 @@
-import Logger from '@/global/Logger';
 import { defineComponent, withModifiers } from 'vue';
 
 export default defineComponent({
 	setup(props, context) {
 		const onDivClick = () => {
-			Logger.log('click div');
+			console.log('click div');
 		};
 		const onBtnClick = () => {
-			Logger.log('click btn');
+			console.log('click btn');
 		};
 		return () => (
 			<>

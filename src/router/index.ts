@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-11-02 15:41:41
+ * @ Modified time: 2022-11-03 14:30:29
  * @ Description:
  *
  */
@@ -11,7 +11,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Layout from '@/layout/Layout.vue';
 
 interface Visible {
-	visible: boolean;
+	visible?: boolean;
 }
 
 type RouterItem = RouteRecordRaw &
@@ -118,6 +118,13 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/demo/Media.vue'),
 				visible: true,
 				meta: { title: 'Media', icon: 'media' },
+			},
+			{
+				path: 'geo',
+				name: 'Geolocation',
+				component: () => import('../views/demo/Geolocation.vue'),
+				visible: true,
+				meta: { title: 'Geolocation', icon: 'geolocation' },
 			},
 		],
 	},
