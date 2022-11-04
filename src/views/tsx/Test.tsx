@@ -1,6 +1,6 @@
-import { defineComponent, ref, reactive, onUnmounted, onMounted } from 'vue';
-import ComponentA from '@/components/componentA/index.vue';
-import ComponentB from '@/components/componentB/index.vue';
+import ComponentA from '@/components/componentA/ComponentA.vue';
+import ComponentB from '@/components/componentB/ComponentB.vue';
+import { defineComponent, onMounted, reactive, ref } from 'vue';
 
 export default defineComponent({
 	props: {
@@ -20,7 +20,7 @@ export default defineComponent({
 			visible.value = !visible.value;
 			num.value++;
 		};
-		const echo = (event, msg) => {
+		const echo = (event: any, msg: number) => {
 			// Logger.debug('event', event);
 			console.debug('echo', msg);
 		};
@@ -37,7 +37,7 @@ export default defineComponent({
 				{list.map(item => {
 					return (
 						<div
-							onclick={e => {
+							onclick={(e: any) => {
 								echo(e, item);
 							}}>
 							<li key={item}>{item}</li>

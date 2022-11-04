@@ -5,7 +5,7 @@
 			<div class="app-logo">
 				<!-- <img :src="require(`@/assets/images/navbar/app-logo-${theme}.png`)" alt="hcttop-logo" /> -->
 				<img :src="getCurrentThemeLogo" alt="hcttop-logo" />
-				<div :class="['app-logo__title', `app-logo__title--${settings.theme}-theme`]">
+				<div :class="['app-logo__title', `app-logo__title--${settings['theme']}-theme`]">
 					<span>{{ getAppTitle }}</span>
 				</div>
 			</div>
@@ -28,10 +28,12 @@ export default defineComponent({
 			ClassicLogo,
 			DarkLogo,
 			LightLogo,
-			settings: reactive(this.$settings),
+			settings: reactive({ ...this.$settings }),
 		};
 	},
-	mounted() {},
+	mounted() {
+		console.log('Applogo', this.settings);
+	},
 	methods: {
 		AppLogo() {
 			return this.ClassicLogo;
@@ -49,7 +51,7 @@ export default defineComponent({
 	},
 	computed: {
 		getCurrentThemeLogo(): string {
-			switch (this.settings.theme) {
+			switch (this.settings['theme']) {
 				case ThemeEnum.Dark:
 					return DarkLogo;
 				case ThemeEnum.Light:
@@ -59,7 +61,7 @@ export default defineComponent({
 			}
 		},
 		getAppTitle() {
-			return this.settings.projectName;
+			return this.settings['projectName'];
 		},
 	},
 });

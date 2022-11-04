@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-11-03 15:29:53
+ * @ Modified time: 2022-11-04 17:34:30
  * @ Description:
  */
 
@@ -33,12 +33,12 @@ const __APP_INFO__ = {
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 	const root = process.cwd();
 	const env = loadEnv(mode, root, ''); // 环境变量对象
-	console.log('环境变量------ %s', env.APP_ENV);
+	// console.log('环境变量------ %s', env.APP_ENV);
 	const viteEnv = wrapperEnv(env);
-	console.log('viteEnv', viteEnv);
+	// console.log('viteEnv', viteEnv);
 	const { VITE_PUBLIC_PATH, VITE_OUTPUT_DIR, VITE_DROP_CONSOLE } = viteEnv;
 	const isBuild = command === 'build';
-	console.log('VITE_DROP_CONSOLE', VITE_DROP_CONSOLE);
+	// console.log('VITE_DROP_CONSOLE', VITE_DROP_CONSOLE);
 	// console.log('文件路径（ process.cwd()）------', root);
 	// console.log('文件路径（dirname）------', __dirname + '/src');
 	// console.log('import.meta.url', import.meta.url);
@@ -107,10 +107,10 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			// Suppress warning
 			__INTLIFY_PROD_DEVTOOLS__: false,
 			__APP_INFO__: JSON.stringify(__APP_INFO__),
-			process: {
-				DROP_LOG: VITE_DROP_CONSOLE,
-			},
-			env,
+			// process: {
+			// 	DROP_LOG: VITE_DROP_CONSOLE,
+			// },
+			// env,
 		},
 	};
 });

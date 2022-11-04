@@ -4,12 +4,8 @@ import RefComponent from '@/components/refComponent';
 export default defineComponent({
 	setup(props, context) {
 		console.debug('props', props);
-		console.debug('props', props['Proxy']);
 		console.debug('context', context);
-		const { proxy } = getCurrentInstance();
-		const click = () => {
-			proxy.$refs.rc.out();
-		};
+		const click = () => {};
 		return () => (
 			<>
 				<div>

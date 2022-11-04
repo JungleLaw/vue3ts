@@ -21,7 +21,7 @@ export default defineComponent({
 		}
 	},
 	methods: {
-		success(position) {
+		success(position: any) {
 			const latitude = position.coords.latitude;
 			const longitude = position.coords.longitude;
 			this.status.textContent = `纬度：${latitude} °，经度：${longitude} °`;

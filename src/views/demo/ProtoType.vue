@@ -5,14 +5,14 @@
 </template>
 
 <script lang="ts">
-import { Sub, Test } from './obj.js';
+import { defineComponent } from 'vue';
+import { Sub } from './Sub';
 
-export default {
+export default defineComponent({
 	data() {
 		return {
 			obj: Object({ a: 1, b: 2 }),
 			array: Array(),
-			func: undefined,
 			test: new Sub('b', 'c'),
 		};
 	},
@@ -26,7 +26,6 @@ export default {
 		// this.obj.prototype.d = 4;
 		console.debug('obj', this.obj);
 		console.debug('array', this.array);
-		this.func = this.fn;
 		console.debug('func', this.fn);
 	},
 	methods: {
@@ -34,7 +33,7 @@ export default {
 			console.debug('func: this is a func');
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped></style>

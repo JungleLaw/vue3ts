@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 15:34:24
  * @ Modified by: Captain
- * @ Modified time: 2022-09-18 04:34:39
+ * @ Modified time: 2022-11-04 15:53:53
  * @ Description:
  */
 
@@ -16,7 +16,7 @@ export function getTheme(): ThemeEnum {
 	return currentTheme ? (currentTheme as ThemeEnum) : Settings.theme;
 }
 
-export function setTheme(theme) {
+export function setTheme(theme: string) {
 	localStorage.setItem(ThemeKey, theme);
 }
 
@@ -31,7 +31,7 @@ export function removeTheme() {
  * @param {*} className 主题包命名空间 如: light-theme dark-theme
  * @returns
  */
-export function toggleClass(element, className): void {
+export function toggleClass(element: HTMLElement, className: ThemeEnum): void {
 	const el = element;
 	if (!el || !className) {
 		return;

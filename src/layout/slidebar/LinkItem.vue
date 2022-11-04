@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-25 15:35:20
  * @ Modified by: Captain
- * @ Modified time: 2022-11-03 17:02:18
+ * @ Modified time: 2022-11-04 16:40:56
  * @ Description:
  -->
 
@@ -36,7 +36,7 @@ export default defineComponent({
 		},
 	},
 	methods: {
-		linkProps(to) {
+		linkProps(to: string) {
 			if (this.isExternal) {
 				return {
 					href: to,

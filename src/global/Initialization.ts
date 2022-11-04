@@ -2,16 +2,16 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 15:55:25
  * @ Modified by: Captain
- * @ Modified time: 2022-11-03 17:01:20
+ * @ Modified time: 2022-11-04 16:24:11
  * @ Description:
  */
 
-import { App, reactive } from 'vue';
+import { type App, reactive } from 'vue';
 import Theme from '@/global/Theme';
 import Settings from '@/global/Settings';
 import focus from '@/directives/focus';
 export default class Initialization {
-	public static setup(app: App) {
+	public static async setup(app: App) {
 		// process.env.VITE_LOGGER_DEBUG;
 		// console.log(__APP_ENV__);
 		// console.log('a%dbb', 1);

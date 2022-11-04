@@ -22,12 +22,12 @@ export default defineComponent({
 			}
 		};
 		const list = reactive([1, 2, 3]);
-		const echo = (event, msg) => {
-			// Logger.debug('event', event);
+		const echo = (event: any, msg: number) => {
+			console.debug('event', event);
 			console.debug('echo', msg);
 		};
 		const counter = ref(0);
-		let counterTask;
+		let counterTask: any;
 		const startCounter: VoidFunction = () => {
 			counterTask = setInterval(() => {
 				counter.value++;
@@ -43,7 +43,7 @@ export default defineComponent({
 				{list.map(item => {
 					return (
 						<div
-							onclick={e => {
+							onclick={(e: any) => {
 								echo(e, item);
 							}}>
 							<li key={item}>{item}</li>

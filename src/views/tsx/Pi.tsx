@@ -2,12 +2,12 @@
  * @ Author: Captain
  * @ Create Time: 2022-10-25 14:46:15
  * @ Modified by: Captain
- * @ Modified time: 2022-10-26 14:21:47
+ * @ Modified time: 2022-11-04 15:46:57
  * @ Description:
  */
 
 import Child from '@/components/pi/Child';
-import Message from '@/components/pi/msg';
+import type Message from '@/components/pi/msg';
 import { defineComponent, provide } from 'vue';
 
 export default defineComponent({

@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-25 15:35:00
  * @ Modified by: Captain
- * @ Modified time: 2022-10-10 18:11:32
+ * @ Modified time: 2022-11-04 16:17:55
  * @ Description:
  -->
 
@@ -108,7 +108,7 @@ export default defineComponent({
 			}
 			return false;
 		},
-		resolvePath(routePath) {
+		resolvePath(routePath: string) {
 			if (isUrl(routePath)) {
 				return routePath;
 			}

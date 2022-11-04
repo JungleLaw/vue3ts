@@ -2,22 +2,14 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-11-03 14:30:29
+ * @ Modified time: 2022-11-04 16:22:36
  * @ Description:
  *
  */
 
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import Layout from '@/layout/Layout.vue';
-
-interface Visible {
-	visible?: boolean;
-}
-
-type RouterItem = RouteRecordRaw &
-	Visible & {
-		children?: RouterItem[];
-	};
+import type RouterItem from './router';
 
 const basicRoutes: RouterItem[] = [
 	{

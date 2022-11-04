@@ -2,12 +2,12 @@
  * @ Author: Captain
  * @ Create Time: 2022-10-08 17:29:02
  * @ Modified by: Captain
- * @ Modified time: 2022-11-03 17:03:03
+ * @ Modified time: 2022-11-04 16:25:50
  * @ Description:
  -->
 
 <script lang="ts">
-import { defineComponent, h, VNode } from 'vue';
+import { defineComponent, h, type VNode } from 'vue';
 
 export default defineComponent({
 	name: 'SlideTitle',

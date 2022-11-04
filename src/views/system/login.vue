@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:00:58
  * @ Modified by: Captain
- * @ Modified time: 2022-11-03 17:03:58
+ * @ Modified time: 2022-11-04 17:56:28
  * @ Description:
  -->
 
@@ -36,8 +36,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import logo from '@/assets/logo.svg';
-import ComponentA from '@/components/ComponentA/index.vue';
-import ComponentB from '@/components/ComponentB/index.vue';
+import ComponentA from '@/components/componentA/ComponentA.vue';
+import ComponentB from '@/components/componentB/ComponentB.vue';
 import { captcha, login } from '@/api/login';
 
 export default defineComponent({

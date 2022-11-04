@@ -1,4 +1,4 @@
-import { defineComponent, Ref, ref } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
 	name: 'TsxIndex',
@@ -6,7 +6,7 @@ export default defineComponent({
 		return { a: 1 };
 	},
 	setup(props, ctx) {
-		const bool: Ref<boolean> = ref(false);
+		const bool = ref<boolean>(false);
 		const executeClick: VoidFunction = () => {
 			console.debug('click');
 			bool.value = !bool.value;
