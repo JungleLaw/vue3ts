@@ -2,12 +2,12 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-16 15:34:24
  * @ Modified by: Captain
- * @ Modified time: 2022-11-04 15:53:53
+ * @ Modified time: 2022-11-07 05:08:31
  * @ Description:
  */
 
-import Settings from './Settings';
-import { ThemeEnum } from './Enum';
+import Settings from './settings/Settings';
+import ThemeEnum from './ThemeEnum';
 
 const ThemeKey = `CURRENT_THEME_${Settings.projectName}`;
 export function getTheme(): ThemeEnum {

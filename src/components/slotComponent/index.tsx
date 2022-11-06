@@ -6,9 +6,9 @@ export default defineComponent({
 		return () => (
 			<>
 				<div>
-					<div>{slots.header()}</div>
-					<div>{slots.default()}</div>
-					<div>{slots.footer()}</div>
+					<div>{slots.header!()}</div>
+					<div>{slots.default!()}</div>
+					<div>{slots.footer!()}</div>
 				</div>
 			</>
 		);

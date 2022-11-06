@@ -4,7 +4,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:06:39
  * @ Modified by: Captain
- * @ Modified time: 2022-10-26 13:22:48
+ * @ Modified time: 2022-11-07 05:17:38
  * @ Description:
  -->
 
@@ -44,7 +44,8 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			fullScreen: this.$settings.fullScreen,
+			// fullScreen: this.$settings.fullScreen,
+			fullScreen: (this.$settings as any).fullScreen,
 		};
 	},
 });

@@ -5,7 +5,7 @@
 			<div class="app-logo">
 				<!-- <img :src="require(`@/assets/images/navbar/app-logo-${theme}.png`)" alt="hcttop-logo" /> -->
 				<img :src="getCurrentThemeLogo" alt="hcttop-logo" />
-				<div :class="['app-logo__title', `app-logo__title--${settings['theme']}-theme`]">
+				<div :class="['app-logo__title', `app-logo__title--${settings.theme!}-theme`]">
 					<span>{{ getAppTitle }}</span>
 				</div>
 			</div>
@@ -17,10 +17,14 @@
 import ClassicLogo from '@/assets/layout/navibar/app-logo-classic.png';
 import DarkLogo from '@/assets/layout/navibar/app-logo-dark.png';
 import LightLogo from '@/assets/layout/navibar/app-logo-light.png';
-import { ThemeEnum } from '@/global/Enum';
+import ThemeEnum from '@/global/ThemeEnum';
 
 import { defineComponent, reactive } from 'vue';
-
+interface ISettings {
+	projectName: string;
+	theme: ThemeEnum;
+	fullScreen: Boolean;
+}
 export default defineComponent({
 	name: 'AppLogo',
 	data() {
@@ -28,8 +32,11 @@ export default defineComponent({
 			ClassicLogo,
 			DarkLogo,
 			LightLogo,
-			settings: reactive({ ...this.$settings }),
+			settings: reactive<any>({ ...this.$settings }),
 		};
+	},
+	created() {
+		// this.settings =  as ISettings;
 	},
 	mounted() {
 		console.log('Applogo', this.settings);

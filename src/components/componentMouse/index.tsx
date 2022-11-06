@@ -6,11 +6,11 @@ export default defineComponent({
 		const x = ref(0);
 		const y = ref(0);
 
-		const update = e => {
-			x.value = e.offsetX;
-			y.value = e.offsetY;
+		const update = (e: Event) => {
+			x.value = (e as MouseEvent).offsetX;
+			y.value = (e as MouseEvent).offsetY;
 		};
-		let root;
+		let root: HTMLCollectionOf<Element>;
 		onMounted(() => {
 			root = document.getElementsByClassName(style['mouse-root']);
 			root[0].addEventListener('mousemove', update);

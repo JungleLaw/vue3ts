@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-14 08:53:47
  * @ Modified by: Captain
- * @ Modified time: 2022-11-04 18:10:49
+ * @ Modified time: 2022-11-07 04:39:45
  * @ Description:
  */
 
@@ -28,7 +28,7 @@
 // 	response => response,
 // 	error => error,
 // );
-const service = (params: any) => {
+const service = (params: any): Promise<any> => {
 	console.log('request');
 	return new Promise(reslove => {});
 };

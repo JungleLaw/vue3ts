@@ -2,14 +2,14 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 14:50:58
  * @ Modified by: Captain
- * @ Modified time: 2022-11-03 16:59:37
+ * @ Modified time: 2022-11-07 06:28:23
  * @ Description:
  */
 const style = (color: string) => {
 	return `background:${color}; padding: 2px 10px; border-radius: 3px;  color: #fff; font-size: 16px;`;
 };
 const getStackTrace = () => {
-	const obj = {};
+	const obj: any = {};
 	if (Error.captureStackTrace) {
 		Error.captureStackTrace(obj, getStackTrace);
 		obj.v8 = true;
@@ -54,7 +54,7 @@ class Logger {
 		Logger.print(Logger.Type.Track, tag, msg, ...optionalParams);
 	}
 
-	private static readonly drop: boolean = process['DROP_LOG'];
+	private static readonly drop: boolean = __DROP_LOG__;
 	// private static readonly drop: boolean = false;
 	private static readonly Type = {
 		Default: { value: 0, color: '#1DD300' },
@@ -64,7 +64,7 @@ class Logger {
 		Debug: { value: 4, color: '#35495e' },
 		Track: { value: 5, color: '#3B1946' },
 	};
-	private static print(type: object, tag: string, msg: any, ...optionalParams: any[]) {
+	private static print(type: any, tag: string, msg: any, ...optionalParams: any[]) {
 		if (Logger.drop) {
 			return;
 		}
@@ -107,7 +107,7 @@ class Logger {
 			}
 		}
 		// console.log('matchResult', matchResult);
-		let line = matchResult[2] || '';
+		let line: string = matchResult[2] || '';
 		// console.log('line', line);
 		if (line) {
 			if (stack.v8) {

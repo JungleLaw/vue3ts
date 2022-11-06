@@ -2,13 +2,13 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-17 15:55:25
  * @ Modified by: Captain
- * @ Modified time: 2022-11-04 16:24:11
+ * @ Modified time: 2022-11-07 04:56:47
  * @ Description:
  */
 
 import { type App, reactive } from 'vue';
 import Theme from '@/global/Theme';
-import Settings from '@/global/Settings';
+import Settings from '@/global/settings/Settings';
 import focus from '@/directives/focus';
 export default class Initialization {
 	public static async setup(app: App) {

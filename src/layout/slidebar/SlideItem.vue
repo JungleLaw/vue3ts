@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-25 15:35:00
  * @ Modified by: Captain
- * @ Modified time: 2022-11-04 16:17:55
+ * @ Modified time: 2022-11-07 05:20:11
  * @ Description:
  -->
 
@@ -90,9 +90,9 @@ export default defineComponent({
 		};
 	},
 	methods: {
-		singleVisibleChildRouter(router): Boolean {
+		singleVisibleChildRouter(router: any): Boolean {
 			const visibleRouters =
-				router.children?.filter(item => {
+				router.children?.filter((item: any) => {
 					if (!item.visible) {
 						return false;
 					}

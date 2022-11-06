@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-11-04 17:34:30
+ * @ Modified time: 2022-11-07 06:52:46
  * @ Description:
  */
 
@@ -107,10 +107,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			// Suppress warning
 			__INTLIFY_PROD_DEVTOOLS__: false,
 			__APP_INFO__: JSON.stringify(__APP_INFO__),
-			// process: {
-			// 	DROP_LOG: VITE_DROP_CONSOLE,
-			// },
-			// env,
+			__DROP_LOG__: VITE_DROP_CONSOLE,
 		},
 	};
 });
