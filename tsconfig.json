@@ -57,6 +57,7 @@
 	"include": [
 		// "src/**/*",
 		"src/**/*.ts",
+		"src/**/*.d.ts",
 		"src/**/*.js",
 		"src/**/*.tsx",
 		"src/**/*.vue",
@@ -68,5 +69,5 @@
 		"build/**/*.d.ts",
 		"vite.config.ts"
 	],
-	"exclude": ["node_modules", "dist"]
+	"exclude": ["node_modules", "dist", "**/*.js"]
 }

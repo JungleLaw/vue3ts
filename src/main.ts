@@ -17,7 +17,7 @@ import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import App from './App';
 import router from './router';
-import Initialization from './global/Initialization';
+import Initialization from './global/initialization';
 
 const bootstrap: VoidFunction = async () => {
 	const app = createApp(App);

@@ -6,8 +6,8 @@
  * @ Description:
  */
 
-import Settings from './settings/Settings';
-import ThemeEnum from './ThemeEnum';
+import Settings from './settings/settings';
+import ThemeEnum from './themeEnum';
 
 const ThemeKey = `CURRENT_THEME_${Settings.projectName}`;
 export function getTheme(): ThemeEnum {

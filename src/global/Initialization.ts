@@ -7,8 +7,8 @@
  */
 
 import { type App, reactive } from 'vue';
-import Theme from '@/global/Theme';
-import Settings from '@/global/settings/Settings';
+import Theme from '@/global/theme';
+import Settings from '@/global/settings/settings';
 import focus from '@/directives/focus';
 export default class Initialization {
 	public static async setup(app: App) {

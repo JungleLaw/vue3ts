@@ -6,7 +6,7 @@
  * @ Description:
  */
 
-import type ThemeEnum from '../ThemeEnum';
+import type ThemeEnum from '../themeEnum';
 
 interface ISettings {
 	projectName: string;

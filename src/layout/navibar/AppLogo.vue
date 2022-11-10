@@ -17,7 +17,7 @@
 import ClassicLogo from '@/assets/layout/navibar/app-logo-classic.png';
 import DarkLogo from '@/assets/layout/navibar/app-logo-dark.png';
 import LightLogo from '@/assets/layout/navibar/app-logo-light.png';
-import ThemeEnum from '@/global/ThemeEnum';
+import ThemeEnum from '@/global/themeEnum';
 
 import { defineComponent, reactive } from 'vue';
 interface ISettings {
