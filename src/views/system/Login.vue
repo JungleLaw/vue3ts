@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:00:58
  * @ Modified by: Captain
- * @ Modified time: 2022-11-04 17:56:28
+ * @ Modified time: 2022-12-02 13:39:44
  * @ Description:
  -->
 
@@ -34,11 +34,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { captcha, login } from '@/api/login';
+import Result from '@/api/result';
 import logo from '@/assets/logo.svg';
 import ComponentA from '@/components/componentA/ComponentA.vue';
 import ComponentB from '@/components/componentB/ComponentB.vue';
-import { captcha, login } from '@/api/login';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
 	components: {
@@ -60,17 +61,21 @@ export default defineComponent({
 		this.requestCaptcha();
 	},
 	methods: {
-		login() {
+		async login() {
 			// console.log('do login', this.loginForm);
-			// const result = await login(this.loginForm);
-			// console.log('login', result);
-			this.$router.push({
-				path: '/home',
-			});
+			const result: Result = await login(this.loginForm);
+			console.log('login', result);
+			const user = result.data;
+			console.log('user', user);
+
+			// this.$router.push({
+			// 	path: '/home',
+			// });
 		},
 		async requestCaptcha() {
-			const result: { data: string } = await captcha();
-			this.captcha = `data:image/svg+xml;base64,${window.btoa(result.data)}`;
+			const result: Result = await captcha();
+			console.log('result', result);
+			this.captcha = window.URL.createObjectURL(result.data);
 		},
 	},
 });

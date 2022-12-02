@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-11-07 06:52:46
+ * @ Modified time: 2022-12-01 11:49:48
  * @ Description:
  */
 
@@ -19,6 +19,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import { resolve } from 'path';
 import { wrapperEnv } from './build/application';
 import dayjs from 'dayjs';
+import { internal } from './proxy';
 
 const pathResolve = (dir: string): string => {
 	return resolve(process.cwd(), '.', dir);
@@ -71,14 +72,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
 			port: 1234,
 			https: false,
 			open: false,
-			proxy: {
-				'/noauth': {
-					// target: 'http://192.168.1.102:7001',
-					target: 'http://127.0.0.1:7001',
-					// target: 'http://10.10.18.60:7001',
-					changeOrigin: true,
-				},
-			},
+			proxy: internal,
 		},
 		esbuild: {
 			pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger', 'Logger'] : [],
