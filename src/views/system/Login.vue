@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:00:58
  * @ Modified by: Captain
- * @ Modified time: 2022-12-02 13:39:44
+ * @ Modified time: 2022-12-06 00:24:20
  * @ Description:
  -->
 
@@ -39,6 +39,7 @@ import Result from '@/api/result';
 import logo from '@/assets/logo.svg';
 import ComponentA from '@/components/componentA/ComponentA.vue';
 import ComponentB from '@/components/componentB/ComponentB.vue';
+import { ElMessageBox } from 'element-plus';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -65,12 +66,15 @@ export default defineComponent({
 			// console.log('do login', this.loginForm);
 			const result: Result = await login(this.loginForm);
 			console.log('login', result);
-			const user = result.data;
+			const user = result.data.data;
 			console.log('user', user);
-
-			// this.$router.push({
-			// 	path: '/home',
-			// });
+			if (user) {
+				this.$router.push({
+					path: '/home',
+				});
+			} else {
+				ElMessageBox.alert('no gay');
+			}
 		},
 		async requestCaptcha() {
 			const result: Result = await captcha();
