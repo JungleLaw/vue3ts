@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:00:58
  * @ Modified by: Captain
- * @ Modified time: 2022-12-06 00:24:20
+ * @ Modified time: 2022-12-12 00:54:43
  * @ Description:
  -->
 
@@ -69,7 +69,7 @@ export default defineComponent({
 			const user = result.data.data;
 			console.log('user', user);
 			if (user) {
-				this.$router.push({
+				this.$router.replace({
 					path: '/home',
 				});
 			} else {
