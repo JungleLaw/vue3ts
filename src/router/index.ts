@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-11-04 16:22:36
+ * @ Modified time: 2022-12-12 14:49:23
  * @ Description:
  *
  */
@@ -122,7 +122,7 @@ const basicRoutes: RouterItem[] = [
 	},
 	{
 		path: '/vue',
-		name: 'Penetrate',
+		name: 'Vue',
 		component: Layout,
 		redirect: '/vue/penetrate',
 		visible: true,
@@ -134,6 +134,13 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/vue/Penetrate.vue'),
 				visible: true,
 				meta: { title: 'Penetrate', icon: 'penetrate' },
+			},
+			{
+				path: 'pinia',
+				name: 'Pinia',
+				component: () => import('../views/vue/Pinia'),
+				visible: true,
+				meta: { title: 'Pinia', icon: 'pinia' },
 			},
 		],
 	},
