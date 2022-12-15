@@ -55,7 +55,10 @@ onMounted(() => {
 		</div>
 		<div class="anchor-content-wrapper">
 			<div id="a" class="anchor-content" style="background: red">aaa</div>
-			<div id="b" class="anchor-content" style="background: aqua">aaa</div>
+			<div id="b" class="anchor-content" style="background: aqua">
+				<div>bbb</div>
+				<div class="b2">bbb2</div>
+			</div>
 			<div id="c" class="anchor-content" style="background: violet">aaa</div>
 			<div id="d" class="anchor-content" style="background: darkcyan">aaa</div>
 			<div id="e" class="anchor-content" style="background: chocolate">aaa</div>
@@ -89,6 +92,16 @@ onMounted(() => {
 		height: calc(100vh - 110px);
 		.anchor-content {
 			height: 500px;
+			.b2 {
+				width: 100px;
+				background-color: olivedrab;
+				position: -webkit-sticky;
+				position: sticky;
+				top: 0;
+				float: right;
+				right: 40px;
+				z-index: 1;
+			}
 		}
 	}
 }
