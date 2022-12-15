@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-12-12 14:49:23
+ * @ Modified time: 2022-12-15 10:47:06
  * @ Description:
  *
  */
@@ -118,6 +118,13 @@ const basicRoutes: RouterItem[] = [
 				visible: true,
 				meta: { title: 'Geolocation', icon: 'geolocation' },
 			},
+			{
+				path: 'anchor',
+				name: 'Anchor',
+				component: () => import('../views/demo/Anchor.vue'),
+				visible: true,
+				meta: { title: 'Anchor', icon: 'anchor' },
+			},
 		],
 	},
 	{
@@ -141,6 +148,13 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/vue/Pinia'),
 				visible: true,
 				meta: { title: 'Pinia', icon: 'pinia' },
+			},
+			{
+				path: 'cookie',
+				name: 'Cookie',
+				component: () => import('../views/vue/Cookie.vue'),
+				visible: true,
+				meta: { title: 'Cookie', icon: 'cookie' },
 			},
 		],
 	},
