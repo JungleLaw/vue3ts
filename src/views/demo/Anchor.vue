@@ -119,6 +119,7 @@ onMounted(() => {
 
 			.text {
 				// width: 200px;
+				word-break: break-all;
 			}
 		}
 	}
