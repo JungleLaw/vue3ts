@@ -56,8 +56,22 @@ onMounted(() => {
 		<div class="anchor-content-wrapper">
 			<div id="a" class="anchor-content" style="background: red">aaa</div>
 			<div id="b" class="anchor-content" style="background: aqua">
-				<div>bbb</div>
 				<div class="b2">bbb2</div>
+				<div>bbb</div>
+				<div>bbb</div>
+				<div class="text">
+					bbbasdbbbasdbbbasdbbba sdbbbasdbbbasdb bbasdbbbas dbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasd
+					bbbasdbbbasdbbbasdbb basdbbbasdbbbasdbbbasdbbbasdbbbasd bbbasdbbbasdbbb asdbbba sdbbbasdbbb asdbbb
+					asdbbbasdbbbasdbbbasdbbbasdb bbasdbbbasdbbbasdbbb asdbbbasdbbbasdbbbasdbbbasdb bbasdbbbasdbbbasdb
+					bbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdb
+					bbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbas dbb b
+					asd bbb asd bbbasdb bbasdbbbasdbbbasd bbbasdbbbasdbbbasdbbbasdbbbasdbb basdbbbasd
+					bbbasdbbbasdbbbasdbbbasd
+				</div>
+				<div>bbb</div>
+				<div>bbb</div>
+				<div>bbb</div>
+				<div>bbb</div>
 			</div>
 			<div id="c" class="anchor-content" style="background: violet">aaa</div>
 			<div id="d" class="anchor-content" style="background: darkcyan">aaa</div>
@@ -101,6 +115,10 @@ onMounted(() => {
 				float: right;
 				right: 40px;
 				z-index: 1;
+			}
+
+			.text {
+				// width: 200px;
 			}
 		}
 	}
