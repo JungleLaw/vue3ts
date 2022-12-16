@@ -4,7 +4,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:06:39
  * @ Modified by: Captain
- * @ Modified time: 2022-11-07 05:17:38
+ * @ Modified time: 2022-12-16 15:27:49
  * @ Description:
  -->
 
@@ -23,7 +23,7 @@
 		</template>
 		<template v-else>
 			<div class="full-screen-wrapper">
-				<main-content></main-content>
+				<full-screen></full-screen>
 			</div>
 		</template>
 	</div>
@@ -31,6 +31,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import FullScreen from './contentview/FullScreen.vue';
 import MainContent from './contentview/MainContent.vue';
 import NaviBar from './navibar/NaviBar.vue';
 import SlideBar from './slidebar/SlideBar.vue';
@@ -41,6 +42,7 @@ export default defineComponent({
 		NaviBar,
 		SlideBar,
 		MainContent,
+		FullScreen,
 	},
 	data() {
 		return {

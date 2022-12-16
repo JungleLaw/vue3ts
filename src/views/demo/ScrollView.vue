@@ -11,10 +11,10 @@ const deltaTop: number[] = [];
 let currentTop;
 
 onMounted(() => {
-	console.log('document.getElementsByClassName', document.getElementsByClassName('anchor-content-wrapper'));
-	contentEl = document.getElementsByClassName('anchor-content-wrapper')[0];
+	console.log('document.getElementsByClassName', document.getElementsByClassName('anchor-root'));
+	contentEl = document.getElementsByClassName('anchor-root')[0];
 
-	children = contentEl.children;
+	children = document.getElementsByClassName('anchor-content-wrapper')[0].children;
 	console.log('children', children);
 
 	for (let i = 0; i < 5; i++) {
@@ -23,7 +23,7 @@ onMounted(() => {
 		let ch = 0;
 		if (i > 0) {
 			pre = deltaTop[i - 1];
-			ch = children[i - 1].clientHeight;
+			ch = children[1].clientHeight;
 		}
 		deltaTop.push(ch + pre);
 	}
@@ -44,28 +44,38 @@ onMounted(() => {
 		current.value = c;
 	});
 });
+const headerItemClick = index => {
+	current.value = index;
+	contentEl.scrollTop = deltaTop[index] - 60;
+};
 </script>
 
 <template>
 	<div class="anchor-root">
 		<div class="anchor-header">
+			<div style="flex: 1"></div>
 			<template v-for="(item, index) of array" :key="index">
-				<a :href="`#${item}`" @click.passive="current = index">
-					<div :class="`${index === current ? 'current' : ''} anchor-item`">{{ item }}</div>
-				</a>
+				<div
+					:class="`${index === current ? 'current' : ''} anchor-item`"
+					@click.passive="headerItemClick(index)"
+				>
+					{{ item }}
+				</div>
 			</template>
+			<div style="flex: 1"></div>
 		</div>
 		<div class="anchor-content-wrapper">
+			<div class="b2">bbb2</div>
+
 			<div id="a" class="anchor-content" style="background: red">aaa</div>
 			<div id="b" class="anchor-content" style="background: aqua">
-				<div class="b2">bbb2</div>
 				<div>bbb</div>
 				<div>bbb</div>
 				<div class="text">
-					bbbasdbbbasdbbbasdbbba sdbbbasdbbbasdb bbasdbbbas dbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasd
-					bbbasdbbbasdbbbasdbb basdbbbasdbbbasdbbbasdbbbasdbbbasd bbbasdbbbasdbbb asdbbba sdbbbasdbbb asdbbb
-					asdbbbasdbbbasdbbbasdbbbasdb bbasdbbbasdbbbasdbbb asdbbbasdbbbasdbbbasdbbbasdb bbasdbbbasdbbbasdb
-					bbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdb
+					bb basd bbbas dbbbas dbbba sdbbbasdbbbasdb bbasdbbbas d bbbasdbb basdbb basdbb basdbb bas dbbb asd
+					bb b asdbbbasd bbbasdbbbasdbbbasdbb basdbbbasdbbbasdbbbasdbbbasdbbbasd bbbasdbbbasdbbb asdbbba
+					sdbbbasdbbb asdbbb asdbbbasdbbbasdbbbasdbbbasdb bbasdbbbasdbbbasdbbb asdbbbasdbbbasdbbbasdbbbasdb
+					bbasdbbbasdbbbasdb bbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdb
 					bbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbasdbbbas dbb b
 					asd bbb asd bbbasdb bbasdbbbasdbbbasd bbbasdbbbasdbbbasdbbbasdbbbasdbb basdbbbasd
 					bbbasdbbbasdbbbasdbbbasd
@@ -79,18 +89,25 @@ onMounted(() => {
 			<div id="d" class="anchor-content" style="background: darkcyan">aaa</div>
 			<div id="e" class="anchor-content" style="background: chocolate">aaa</div>
 		</div>
+		<div class="footer"></div>
 	</div>
 </template>
 <style lang="scss" scoped>
 .anchor-root {
-	display: flex;
-	flex-flow: column nowrap;
+	// display: flex;
+	// flex-flow: column nowrap;
+	overflow-y: auto;
+	height: 100vh;
+
 	.anchor-header {
+		width: 100%;
+		position: fixed;
 		display: flex;
 		flex-flow: row nowrap;
 		background-color: white;
 		align-items: center;
 		justify-content: center;
+		z-index: 12;
 		.anchor-item {
 			width: 100px;
 			text-align: center;
@@ -104,26 +121,31 @@ onMounted(() => {
 		}
 	}
 	.anchor-content-wrapper {
-		overflow: auto;
-		height: calc(100vh - 110px);
+		padding-top: 60px;
+		// overflow: auto;
+		// height: calc(100vh - 110px);
+		.b2 {
+			width: 100px;
+			background-color: olivedrab;
+			position: -webkit-sticky;
+			position: sticky;
+			top: 60px;
+			float: right;
+			right: 40px;
+			z-index: 1;
+		}
 		.anchor-content {
 			height: 500px;
-			.b2 {
-				width: 100px;
-				background-color: olivedrab;
-				position: -webkit-sticky;
-				position: sticky;
-				top: 0;
-				float: right;
-				right: 40px;
-				z-index: 1;
-			}
 
 			.text {
 				// width: 200px;
 				word-break: break-all;
 			}
 		}
+	}
+	.footer {
+		height: 1000px;
+		background-color: white;
 	}
 }
 </style>

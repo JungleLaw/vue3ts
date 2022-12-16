@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 22:26:48
  * @ Modified by: Captain
- * @ Modified time: 2022-12-16 15:27:57
+ * @ Modified time: 2022-12-16 15:28:18
  * @ Description:
  -->
 
@@ -18,7 +18,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-	name: 'MainContainer',
+	name: 'FullScreen',
 	mounted() {},
 	computed: {
 		key() {
@@ -30,7 +30,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .main-content-root {
-	height: calc(100vh - 50px);
+	height: 100vh;
 	width: 100%;
 	position: relative;
 	overflow: hidden;

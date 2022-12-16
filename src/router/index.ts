@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-12-15 10:47:06
+ * @ Modified time: 2022-12-16 11:07:52
  * @ Description:
  *
  */
@@ -124,6 +124,13 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/demo/Anchor.vue'),
 				visible: true,
 				meta: { title: 'Anchor', icon: 'anchor' },
+			},
+			{
+				path: 'scrollView',
+				name: 'ScrollView',
+				component: () => import('../views/demo/ScrollView.vue'),
+				visible: true,
+				meta: { title: 'ScrollView', icon: 'scrollView' },
 			},
 		],
 	},
