@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-12-16 11:07:52
+ * @ Modified time: 2022-12-19 11:20:51
  * @ Description:
  *
  */
@@ -44,6 +44,30 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/system/Home.vue'),
 				visible: true,
 				meta: { title: 'Home', icon: 'home' },
+			},
+		],
+	},
+	{
+		path: '/elementui',
+		name: 'ElementUI',
+		component: Layout,
+		redirect: '/elementui/container',
+		visible: true,
+		meta: { title: 'ElementUI', icon: 'element' },
+		children: [
+			{
+				path: 'container',
+				name: 'Container',
+				component: () => import('@/views/elmentui/container/index.vue'),
+				visible: true,
+				meta: { title: 'Container', icon: 'container' },
+			},
+			{
+				path: 'dialog',
+				name: 'Dialog',
+				component: () => import('@/views/elmentui/dialog/index.vue'),
+				visible: true,
+				meta: { title: 'Dialog', icon: 'dialog' },
 			},
 		],
 	},

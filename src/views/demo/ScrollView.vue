@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
-const html = `<p>行前准备</p><p>这里是aaa</p><p><strong>开始准备</strong></p><div><span style="font-size: 12px;">1、那怎么搞</span></div><div><span style="font-size: 12px;">2、就这么搞吧</span></div>`;
+const html = `</br></br></br></br></br></br></br></br></br></br><p>行前准备</p><p>这里是aaa</p><p><strong>开始准备</strong></p><div><span style="font-size: 12px;">1、那怎么搞</span></div><div><span style="font-size: 12px;">2、就这么搞吧</span></div>`;
 
 const array = ['a', 'b', 'c', 'd', 'e'];
 const current = ref(0);

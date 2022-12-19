@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     ComponentA: typeof import('./src/components/componentA/ComponentA.vue')['default']
     ComponentB: typeof import('./src/components/componentB/ComponentB.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElDialog: typeof import('element-plus/es')['ElDialog']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElInput: typeof import('element-plus/es')['ElInput']
