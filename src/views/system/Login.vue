@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-12 21:00:58
  * @ Modified by: Captain
- * @ Modified time: 2022-12-12 00:54:43
+ * @ Modified time: 2022-12-22 11:20:58
  * @ Description:
  -->
 
@@ -64,17 +64,17 @@ export default defineComponent({
 	methods: {
 		async login() {
 			// console.log('do login', this.loginForm);
-			const result: Result = await login(this.loginForm);
-			console.log('login', result);
-			const user = result.data.data;
-			console.log('user', user);
-			if (user) {
-				this.$router.replace({
-					path: '/home',
-				});
-			} else {
-				ElMessageBox.alert('no gay');
-			}
+			// const result: Result = await login(this.loginForm);
+			// console.log('login', result);
+			// const user = result.data.data;
+			// console.log('user', user);
+			// if (user) {
+			this.$router.replace({
+				path: '/home',
+			});
+			// } else {
+			// 	ElMessageBox.alert('no gay');
+			// }
 		},
 		async requestCaptcha() {
 			const result: Result = await captcha();

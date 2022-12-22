@@ -2,8 +2,12 @@ import type { RouteRecordRaw } from 'vue-router';
 
 interface Visible {
 	visible?: boolean;
-	children?: RouterItem[];
 }
 
-type RouterItem = RouteRecordRaw & Visible;
+interface Children extends Visible {
+	children?: (RouteRecordRaw & Visible)[];
+}
+
+type RouterItem = RouteRecordRaw & Children;
+
 export default RouterItem;

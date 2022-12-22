@@ -2,7 +2,7 @@
  * @ Author: Captain
  * @ Create Time: 2022-09-08 14:35:07
  * @ Modified by: Captain
- * @ Modified time: 2022-12-19 11:20:51
+ * @ Modified time: 2022-12-22 14:39:04
  * @ Description:
  *
  */
@@ -41,8 +41,8 @@ const basicRoutes: RouterItem[] = [
 			{
 				path: 'index',
 				name: 'HomeIndex',
-				component: () => import('../views/system/Home.vue'),
 				visible: true,
+				component: () => import('../views/system/Home.vue'),
 				meta: { title: 'Home', icon: 'home' },
 			},
 		],
@@ -193,21 +193,21 @@ const basicRoutes: RouterItem[] = [
 		path: '/tsx',
 		name: 'Tsx',
 		component: Layout,
-		redirect: '/tsx/index',
+		redirect: '/tsx/test',
 		visible: true,
 		meta: { title: 'Tsx', icon: 'tsx' },
 		children: [
-			{
-				path: 'index',
-				name: 'Index',
-				component: () => import('../views/tsx/Index'),
-				visible: true,
-				meta: { title: 'Index', icon: 'index' },
-			},
+			// {
+			// 	path: 'index',
+			// 	name: 'Index',
+			// 	component: () => import('@/views/tsx/Index'),
+			// 	visible: true,
+			// 	meta: { title: 'Index', icon: 'index' },
+			// },
 			{
 				path: 'test',
 				name: 'Test',
-				component: () => import('../views/tsx/Test'),
+				component: () => import('@/views/tsx/Test'),
 				visible: true,
 				meta: { title: 'Test', icon: 'test' },
 			},
@@ -315,6 +315,30 @@ const basicRoutes: RouterItem[] = [
 				component: () => import('../views/tsx/Pi'),
 				visible: true,
 				meta: { title: 'Provide&Inject', icon: 'pi' },
+			},
+		],
+	},
+	{
+		path: '/mall',
+		name: 'Mall',
+		component: Layout,
+		redirect: '/mall/index',
+		visible: true,
+		meta: { title: 'Mall', icon: 'mall' },
+		children: [
+			{
+				path: 'index',
+				name: 'Index',
+				component: () => import('@/views/mall/index'),
+				visible: true,
+				meta: { title: 'Index', icon: 'index' },
+			},
+			{
+				path: 'login',
+				name: 'Login',
+				component: () => import('@/views/mall/login/index'),
+				visible: true,
+				meta: { title: 'Login', icon: 'login' },
 			},
 		],
 	},
